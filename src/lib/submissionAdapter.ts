@@ -8,6 +8,7 @@ import { getConsentVersion } from '@/lib/consentVersion'
 import { readUtmData } from '@/lib/utm'
 import { validateLeadPayload, type ValidationResult } from '@/lib/leadPayloadValidation'
 import { getSubmissionMode, isFirebaseMode } from '@/lib/submissionMode'
+import { submitToFirestore } from '@/lib/firestoreSubmissionAdapter'
 
 /**
  * Builds a future-ready AsgXLeadPayload from quiz submission data.
@@ -15,13 +16,13 @@ import { getSubmissionMode, isFirebaseMode } from '@/lib/submissionMode'
  *
  * Submission mode is controlled by VITE_ASGX_SUBMISSION_MODE:
  *   - "mock" (default): Local sessionStorage only. No external calls.
- *   - "firebase": Validates config, requires emulator. See firestoreSubmissionAdapter.
+ *   - "firebase": Also attempts to write to Firestore emulator.
  *
- * Returns a clear result object. No external calls in mock mode.
+ * Session storage keys are ALWAYS saved in both modes.
  */
-export function buildAndSaveLeadPayload(
+export async function buildAndSaveLeadPayload(
   submission: AsgXQuizSubmission
-): AsgXSubmissionStatus & { validation: ValidationResult } {
+): Promise<AsgXSubmissionStatus & { validation: ValidationResult }> {
   const now = new Date().toISOString()
   const localSubmissionId = `asgx_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`
   const mode = getSubmissionMode()
@@ -90,7 +91,14 @@ export function buildAndSaveLeadPayload(
 
   sessionStorage.setItem('asgXLeadPayload', JSON.stringify(payload))
 
-  const modeLabel = mode === 'firebase' ? ' [firebase mode active]' : ''
+  // Firebase mode: also write to emulator
+  let firestoreResult: unknown = null
+  if (isFirebaseMode()) {
+    firestoreResult = await submitToFirestore(payload)
+    sessionStorage.setItem('asgXFirestoreResult', JSON.stringify(firestoreResult))
+  }
+
+  const modeLabel = isFirebaseMode() ? ' [firestore emulator write attempted]' : ''
 
   return {
     success: true,

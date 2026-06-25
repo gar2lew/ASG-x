@@ -22,10 +22,18 @@ interface FirestoreSubmissionResult extends AsgXSubmissionStatus {
  */
 function prepareFirestoreDocument(payload: AsgXLeadPayload) {
   return {
+    sourceKey: 'asg_x_smsf',
+    sourceLabel: 'ASG-x Online SMSF Funnel',
+
     leadSource: payload.leadSource,
     submissionId: payload.submissionId,
+    localSubmissionId: payload.submissionId,
     createdAt: payload.createdAt,
     submittedAt: new Date().toISOString(),
+
+    // Environment markers
+    submissionMode: 'firebase',
+    emulatorOnly: true,
 
     firstName: payload.firstName,
     lastName: payload.lastName,

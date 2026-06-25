@@ -5,6 +5,7 @@ import { Trash2, Copy, Download, Check } from 'lucide-react'
 interface DebugData {
   asgXLeadPayload: unknown
   asgXLeadPayloadValidation: unknown
+  asgXFirestoreResult: unknown
   asgXUtmData: unknown
   asgXQuizOutcome: unknown
   asgXQuizSubmission: unknown
@@ -23,6 +24,7 @@ function readSessionStorage(): DebugData {
   return {
     asgXLeadPayload: safeParse('asgXLeadPayload'),
     asgXLeadPayloadValidation: safeParse('asgXLeadPayloadValidation'),
+    asgXFirestoreResult: safeParse('asgXFirestoreResult'),
     asgXUtmData: safeParse('asgXUtmData'),
     asgXQuizOutcome: sessionStorage.getItem('asgXQuizOutcome') ?? null,
     asgXQuizSubmission: safeParse('asgXQuizSubmission'),
@@ -32,6 +34,7 @@ function readSessionStorage(): DebugData {
 const ASGX_KEYS = [
   'asgXLeadPayload',
   'asgXLeadPayloadValidation',
+  'asgXFirestoreResult',
   'asgXUtmData',
   'asgXQuizOutcome',
   'asgXQuizSubmission',
@@ -50,6 +53,7 @@ export default function DebugPage() {
     setData({
       asgXLeadPayload: null,
       asgXLeadPayloadValidation: null,
+      asgXFirestoreResult: null,
       asgXUtmData: null,
       asgXQuizOutcome: null,
       asgXQuizSubmission: null,
@@ -131,6 +135,7 @@ export default function DebugPage() {
         <div className="space-y-6">
           {renderSection('asgXLeadPayload', data.asgXLeadPayload, 'Future-ready lead payload for CRM/Firebase', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXLeadPayloadValidation', data.asgXLeadPayloadValidation, 'Pre-submission validation result', copiedKey, copyToClipboard, downloadJson)}
+          {renderSection('asgXFirestoreResult', data.asgXFirestoreResult, 'Firestore emulator write result (firebase mode only)', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXUtmData', data.asgXUtmData, 'UTM campaign tracking parameters', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXQuizOutcome', data.asgXQuizOutcome, 'Quiz outcome string', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXQuizSubmission', data.asgXQuizSubmission, 'Raw quiz form submission data', copiedKey, copyToClipboard, downloadJson)}

@@ -353,7 +353,7 @@ export default function MultiStepQuiz() {
 
   const currentStepLabel = steps[step - 1]
 
-  function saveAndNavigate(outcome: QuizOutcome) {
+  async function saveAndNavigate(outcome: QuizOutcome) {
     const submission: AsgXQuizSubmission = {
       ...data,
       mobile: normalizeAustralianMobile(data.mobile),
@@ -365,12 +365,12 @@ export default function MultiStepQuiz() {
     sessionStorage.setItem('asgXQuizSubmission', JSON.stringify(submission))
     sessionStorage.setItem('asgXQuizOutcome', outcome)
 
-    buildAndSaveLeadPayload(submission)
+    await buildAndSaveLeadPayload(submission)
 
     navigate('/thank-you')
   }
 
-  function handleNext(event: FormEvent<HTMLFormElement>) {
+  async function handleNext(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const nextErrors = validateStep(step, data)
     setErrors(nextErrors)
@@ -384,7 +384,7 @@ export default function MultiStepQuiz() {
     }
 
     const score = calculateQuizScore(data)
-    saveAndNavigate(getQuizOutcome(score))
+    await saveAndNavigate(getQuizOutcome(score))
   }
 
   return (

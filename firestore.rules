@@ -1,0 +1,22 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // === EMULATOR-ONLY DEVELOPMENT RULES ===
+    // These rules are for local Firestore emulator testing only.
+    // They are NOT production-safe.
+    // Production rules must be reviewed by security and compliance
+    // before any live deployment.
+
+    match /asgXLeadSubmissions/{docId} {
+      // Allow full access during emulator development
+      allow read, write: if true;
+    }
+
+    // Deny everything else by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

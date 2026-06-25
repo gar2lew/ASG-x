@@ -105,6 +105,7 @@ A typed data model and local mock submission adapter have been implemented:
 | `asgXLeadPayload` | Future-ready lead payload (contacts, quiz, consent, UTM, meta) |
 | `asgXUtmData` | UTM parameters from URL or previously stored |
 | `asgXLeadPayloadValidation` | Pre-submission validation result (errors + warnings) |
+| `asgXFirestoreResult` | Firestore emulator write result (firebase mode only) |
 
 ## Phase 3B — Integration readiness and debug visibility
 
@@ -201,6 +202,116 @@ No real `.env` file exists. No secrets are hardcoded.
 - Production Firestore writes are **not possible** without explicit env config
 - The existing mock adapter (`submissionAdapter.ts`) is unchanged in mock mode
 - All existing debug tools, session storage keys, and sample payloads are preserved
+
+## Phase 4B — Emulator wiring and smoke test preparation
+
+### Firebase emulator project files
+
+| File | Purpose |
+|------|---------|
+| `firebase.json` | Emulator config: Firestore on `8080`, UI on `4000` |
+| `firestore.rules` | Dev-only rules (allow everything for `asgXLeadSubmissions`) |
+| `firestore.indexes.json` | Empty indexes file |
+
+These files support local emulator testing. They contain no deploy targets.
+The emulator rules are intentionally permissive — they are NOT production-safe.
+
+### Local env override
+
+`.env.local.example` provides demo-safe values for emulator testing:
+
+```powershell
+copy .env.local.example .env.local
+```
+
+This file is in `.gitignore` and will not be committed.
+
+### How to run mock mode (default)
+
+No configuration needed. Just run:
+
+```powershell
+npm run dev
+```
+
+All submissions stay in `sessionStorage`. No Firebase involved.
+
+### How to run Firebase emulator mode
+
+```powershell
+copy .env.local.example .env.local
+npm run emulators      # Terminal 1 — start Firestore emulator
+npm run dev            # Terminal 2 — start Vite
+```
+
+Then complete a quiz. The submission will write to the local Firestore emulator.
+Check the Emulator UI at `http://127.0.0.1:4000`.
+
+### Submission flow in firebase mode
+
+1. Quiz submits → `saveAndNavigate()`
+2. Quiz submission + outcome saved to `sessionStorage`
+3. `buildAndSaveLeadPayload()` builds `AsgXLeadPayload`
+4. Validation runs via `validateLeadPayload()`
+5. Payload saved to `sessionStorage` (always, both modes)
+6. `submitToFirestore()` attempts emulator write
+7. Firestore result saved to `asgXFirestoreResult`
+8. `navigate('/thank-you')`
+
+### Smoke test
+
+Full step-by-step instructions: `docs/asg-x-firebase-emulator-smoke-test.md`
+
+### Production rollout blockers
+
+All Phase 4A blockers remain in place. Additionally:
+
+- `firestore.rules` must be replaced with production security rules
+- `emulatorOnly: true` marker must be audited before production
+- `.env.local.example` uses demo values — never use with production Firebase
+- `npm run emulators` script must not exist in production deployments
+
+## Phase 4C — Emulator smoke test and hardening
+
+### Changes
+- **`.env.local`** created from `.env.local.example` — ignored by `.gitignore`
+- **Debug page** now shows `asgXFirestoreResult` with copy/download buttons
+- **Clear-all** now wipes `asgXFirestoreResult` alongside other keys
+
+### Smoke test status
+The emulator must be started manually:
+
+```powershell
+# Terminal 1
+npm run emulators
+
+# Terminal 2
+npm run dev
+```
+
+Then complete the quiz in firebase mode and verify:
+- `asgXFirestoreResult` visible on `/debug` with `success: true` and `firestoreDocId`
+- Firestore emulator UI shows one document in `asgXLeadSubmissions`
+- Document includes `sourceKey: "asg_x_smsf"`, `emulatorOnly: true`, `submissionMode: "firebase"`
+
+### How to verify asgXFirestoreResult
+Visit `/debug` after quiz submission. The 3rd section displays the Firestore write result.
+
+### Known limitations
+- Emulator must be started manually in a separate terminal
+- `/debug` route must be removed before production deployment
+- Firestore doc ID visible in debug — do not expose in production
+- UTM test URL: `/quiz?utm_source=test&utm_medium=cpc&utm_campaign=asg_x_smsf_test&utm_content=hero&utm_term=smsf_property`
+
+### Session storage keys (all 6)
+| Key | Contents |
+|-----|----------|
+| `asgXQuizSubmission` | Raw quiz form data + score + outcome |
+| `asgXQuizOutcome` | Outcome string (`explore` / `review` / `not_now`) |
+| `asgXLeadPayload` | Future-ready lead payload |
+| `asgXLeadPayloadValidation` | Pre-submission validation result |
+| `asgXFirestoreResult` | Firestore emulator write result (firebase mode only) |
+| `asgXUtmData` | UTM parameters from URL or previously stored |
 
 ## Phase 3C — Prototype hardening, fixtures, and QA
 
