@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-navy-50: #f0f3f9;
+  --color-navy-100: #d9e0f0;
+  --color-navy-200: #b3c1e0;
+  --color-navy-300: #8da2d1;
+  --color-navy-400: #6783c1;
+  --color-navy-500: #4164b2;
+  --color-navy-600: #34508e;
+  --color-navy-700: #273c6b;
+  --color-navy-800: #1a2847;
+  --color-navy-900: #0d1424;
+  --color-brass-50: #fdf9f0;
+  --color-brass-100: #f9eed4;
+  --color-brass-200: #f3dda8;
+  --color-brass-300: #edcb7d;
+  --color-brass-400: #e7ba51;
+  --color-brass-500: #c9993a;
+  --color-brass-600: #a17a2e;
+  --color-brass-700: #795c22;
+  --color-brass-800: #513d17;
+  --color-brass-900: #2a1f0c;
+
+  /* Open Design brass tokens */
+  --color-brass-gold: #b5a642;
+  --color-brass-gold-light: #d4c56a;
+
+  /* Open Design dark tokens */
+  --color-obsidian: #0a0a0a;
+  --color-onyx: #121212;
+  --color-dark-navy: #0d1117;
+  --color-card-surface: #1a1a1a;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-sans: "Montserrat", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* === Brass corner brackets (used on premium cards & CTA frames) === */
+.brass-corners {
+  position: relative;
+}
+.brass-corners::before {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+  border-top: 2px solid var(--color-brass-gold);
+  border-left: 2px solid var(--color-brass-gold);
+  pointer-events: none;
+  z-index: 1;
+}
+.brass-corners::after {
+  content: '';
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-bottom: 2px solid var(--color-brass-gold);
+  border-right: 2px solid var(--color-brass-gold);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === Premium card treatment === */
+.premium-card {
+  background: var(--color-card-surface);
+  border: 1px solid rgba(181, 166, 66, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.premium-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-brass-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.premium-card .brass-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-brass-gold);
+  margin-bottom: 0.75rem;
+}
+
+/* === CTA frame with brass border === */
+.cta-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 3rem;
+  background: var(--color-card-surface);
+  border-radius: 20px;
+  border: 1px solid var(--color-brass-gold);
+  text-align: center;
+  position: relative;
+}
+.cta-frame::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-top: 2px solid var(--color-brass-gold);
+  border-left: 2px solid var(--color-brass-gold);
+  pointer-events: none;
+}
+.cta-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-bottom: 2px solid var(--color-brass-gold);
+  border-right: 2px solid var(--color-brass-gold);
+  pointer-events: none;
+}
+
+/* === Disclosure panel === */
+.disclosure-panel {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: var(--color-card-surface);
+  border-radius: 20px;
+  border-left: 4px solid var(--color-brass-gold);
+}
+
+/* === Brass divider === */
+.brass-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(181, 166, 66, 0.2);
+}
+
+/* === Glass morphism overlay === */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(181, 166, 66, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* === Service image card (placeholder) === */
+.service-image-card {
+  position: relative;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(181, 166, 66, 0.2);
+  background: var(--color-card-surface);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-image-card:hover {
+  border-color: var(--color-brass-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+.service-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(transparent, #0a0a0a);
+  z-index: 2;
+}
+
+/* === Stat card === */
+.stat-card {
+  background: var(--color-card-surface);
+  border-radius: 16px;
+  border: 1px solid rgba(181, 166, 66, 0.12);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+.stat-card:hover {
+  border-color: rgba(181, 166, 66, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--color-brass-gold), var(--color-brass-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/* === Trust badge === */
+.trust-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(252, 252, 252, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+/* === Brass accent line === */
+.brass-accent-line {
+  width: 80px;
+  height: 2px;
+  background: var(--color-brass-gold);
+  margin: 0 auto;
+}
+
+/* === Risk list items === */
+.risk-list li::marker {
+  color: var(--color-brass-gold);
+}
+
+/* === FAQ accordion === */
+.faq-accordion {
+  background: var(--color-card-surface);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* === Focus ring (brass) === */
+*:focus-visible {
+  outline: 2px solid var(--color-brass-gold);
+  outline-offset: 2px;
+}
+
+/* === CTA frame responsive === */
+@media (max-width: 600px) {
+  .cta-frame {
+    padding: 2.5rem 1.25rem;
+  }
+  .cta-frame::before,
+  .cta-frame::after {
+    width: 24px;
+    height: 24px;
+  }
+  .cta-frame::before {
+    top: 12px;
+    left: 12px;
+  }
+  .cta-frame::after {
+    bottom: 12px;
+    right: 12px;
+  }
+  .disclosure-panel {
+    padding: 1.5rem;
+  }
+  .premium-card {
+    padding: 1.75rem 1.5rem;
+  }
+}

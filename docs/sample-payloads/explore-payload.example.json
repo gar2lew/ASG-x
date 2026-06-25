@@ -1,0 +1,40 @@
+{
+  "leadSource": "asg_x_smsf",
+  "submissionId": "asgx_1719500000000_a1b2c3",
+  "createdAt": "2026-06-25T05:30:00.000Z",
+  "firstName": "Emily",
+  "lastName": "Richards",
+  "mobile": "0412345678",
+  "email": "emily.example@email.test",
+  "state": "NSW",
+  "bestTime": "Morning",
+  "hasSmsf": "yes",
+  "superBalanceRange": "$500k+",
+  "superBalanceType": "combined",
+  "ageRange": "45-54",
+  "employmentStatus": "Employed full-time",
+  "propertyType": "commercial",
+  "preferredArea": "Sydney CBD and Inner West",
+  "timeframe": "Now",
+  "currentlyWithAdviser": "yes",
+  "quizScore": 88,
+  "quizOutcome": "explore",
+  "consent": {
+    "generalInformation": true,
+    "noPersonalAdvice": true,
+    "riskAndCosts": true,
+    "contact": true,
+    "referral": true,
+    "version": "1.0.0",
+    "timestamp": "2026-06-25T05:30:00.000Z"
+  },
+  "utm": {
+    "utmSource": "google",
+    "utmMedium": "cpc",
+    "utmCampaign": "asg_x_smsf_launch",
+    "utmContent": "hero_cta",
+    "utmTerm": "smsf property investment"
+  },
+  "pipelineStage": "new_enquiry",
+  "campaignId": "asg_x_smsf_v1"
+}
