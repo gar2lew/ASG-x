@@ -5,9 +5,15 @@ service cloud.firestore {
 
     // === EMULATOR-ONLY DEVELOPMENT RULES ===
     // These rules are for local Firestore emulator testing only.
-    // They are NOT production-safe.
-    // Production rules must be reviewed by security and compliance
-    // before any live deployment.
+    // They are NOT production-safe. DO NOT DEPLOY TO PRODUCTION.
+    //
+    // Production rules must:
+    //   1. Deny all direct client writes
+    //   2. Allow writes only from Firebase Functions (server-side)
+    //   3. Be reviewed by security and compliance before deployment
+    //   4. Include field-level validation for required fields
+    //
+    // See docs/asg-x-production-readiness-review.md for full rollout plan.
 
     match /asgXLeadSubmissions/{docId} {
       // Allow full access during emulator development

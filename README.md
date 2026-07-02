@@ -303,6 +303,41 @@ Visit `/debug` after quiz submission. The 3rd section displays the Firestore wri
 - Firestore doc ID visible in debug — do not expose in production
 - UTM test URL: `/quiz?utm_source=test&utm_medium=cpc&utm_campaign=asg_x_smsf_test&utm_content=hero&utm_term=smsf_property`
 
+## Phase 5A — Production readiness review
+
+### Documentation created
+
+| File | Purpose |
+|------|---------|
+| `docs/asg-x-production-readiness-review.md` | Full production readiness analysis: what is proven, what is not ready, 3 architecture options, minimum go-live checklist, no-go checklist |
+| `docs/asg-x-go-live-blockers.md` | 25+ blocker checklist across critical, technical, compliance, and operational categories |
+| `docs/asg-x-phase-5b-functions-plan.md` | Firebase Functions scaffold plan: function structure, validation, audit log, rate limiting, App Check, deployment blockers |
+
+### Recommended production architecture
+
+**Option B — Firebase Functions server-side endpoint (recommended)**
+
+- Frontend calls a `submitLead` HTTPS callable Function
+- Function validates payload server-side (unspoofable)
+- Function writes to Firestore with server timestamps
+- Function logs an immutable consent audit entry
+- Function can later trigger CRM/email/SMS workflows
+- Security rules deny all direct client writes — only the Function writes
+
+**Options A (direct client write) and C (external API) are documented and deferred.**
+
+### Key warnings
+
+- Current `firestore.rules` are **emulator-only**. Do not deploy to production.
+- Production Firebase is **not connected**. All env values are demos/placeholders.
+- `/debug` is **prototype-only**. Must be removed or gated before production.
+- Firebase mode (`VITE_ASGX_SUBMISSION_MODE=firebase`) is **emulator-only**.
+- No secrets exist in any committed file.
+
+### Next recommended phase
+
+Phase 5B: Firebase Functions local emulator scaffold (documented in `docs/asg-x-phase-5b-functions-plan.md`), if approved.
+
 ### Session storage keys (all 6)
 | Key | Contents |
 |-----|----------|
