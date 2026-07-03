@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Trash2, Copy, Download, Check } from 'lucide-react'
+import { isDebugEnabled } from '@/lib/environment'
 
 interface DebugData {
   asgXLeadPayload: unknown
@@ -9,6 +10,7 @@ interface DebugData {
   asgXUtmData: unknown
   asgXQuizOutcome: unknown
   asgXQuizSubmission: unknown
+  asgXBookingIntent: unknown
 }
 
 function readSessionStorage(): DebugData {
@@ -28,6 +30,7 @@ function readSessionStorage(): DebugData {
     asgXUtmData: safeParse('asgXUtmData'),
     asgXQuizOutcome: sessionStorage.getItem('asgXQuizOutcome') ?? null,
     asgXQuizSubmission: safeParse('asgXQuizSubmission'),
+    asgXBookingIntent: safeParse('asgXBookingIntent'),
   }
 }
 
@@ -38,9 +41,38 @@ const ASGX_KEYS = [
   'asgXUtmData',
   'asgXQuizOutcome',
   'asgXQuizSubmission',
+  'asgXBookingIntent',
 ]
 
 export default function DebugPage() {
+  if (!isDebugEnabled()) {
+    return (
+      <div className="bg-navy-50 px-4 py-12">
+        <div className="mx-auto max-w-2xl rounded-lg border border-navy-200 bg-white p-6 text-center shadow-lg shadow-navy-900/5 sm:p-10">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brass-600">
+            Prototype controls
+          </p>
+          <h1 className="mt-3 text-3xl font-bold text-navy-900">
+            Debug view is disabled
+          </h1>
+          <p className="mt-4 text-navy-700">
+            Debug view is disabled for this environment.
+          </p>
+          <Link
+            to="/"
+            className="mt-6 inline-flex rounded-lg bg-brass-500 px-6 py-3 font-bold text-navy-950 transition hover:bg-brass-400"
+          >
+            Back to home
+          </Link>
+        </div>
+      </div>
+    )
+  }
+
+  return <DebugPanel />
+}
+
+function DebugPanel() {
   const [data, setData] = useState<DebugData>(readSessionStorage)
   const [copiedKey, setCopiedKey] = useState<string | null>(null)
 
@@ -57,6 +89,7 @@ export default function DebugPage() {
       asgXUtmData: null,
       asgXQuizOutcome: null,
       asgXQuizSubmission: null,
+      asgXBookingIntent: null,
     })
   }
 
@@ -139,6 +172,7 @@ export default function DebugPage() {
           {renderSection('asgXUtmData', data.asgXUtmData, 'UTM campaign tracking parameters', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXQuizOutcome', data.asgXQuizOutcome, 'Quiz outcome string', copiedKey, copyToClipboard, downloadJson)}
           {renderSection('asgXQuizSubmission', data.asgXQuizSubmission, 'Raw quiz form submission data', copiedKey, copyToClipboard, downloadJson)}
+          {renderSection('asgXBookingIntent', data.asgXBookingIntent, 'Demo-only discovery call preference', copiedKey, copyToClipboard, downloadJson)}
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-white/30 text-xs text-center">

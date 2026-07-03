@@ -1,6 +1,6 @@
 # ASG‑x Online SMSF Property Pathway
 
-**Status:** Frontend prototype — pre-integration
+**Status:** Vercel preview/demo prototype — pre-production and demo-safe
 
 ## What this is
 
@@ -8,12 +8,17 @@ ASG‑x by Amplify Solutions Group is an online‑first enquiry and discovery pa
 designed to help Australians understand the general process, risks, costs, and
 professional support involved in SMSF property investment.
 
-This prototype delivers:
+This prototype delivers a safe internal-review demo of:
 
 - A premium dark-editorial landing page
 - A functional 4-step discovery quiz
 - A thank-you page that reads the quiz outcome from `sessionStorage`
+- A local-only booking intent step for discovery call preferences
+- A gated prototype debug page for local QA
 - Supporting pages (FAQ, Privacy Policy, Referral Disclosure)
+
+No production Firebase, CRM, SMS/email automation, real calendar booking,
+Calendly, Zoom, or referral workflow is connected.
 
 ## Tech stack
 
@@ -41,7 +46,8 @@ Then open `http://localhost:5173` in your browser.
 | `/`                   | Landing page           | Implemented   |
 | `/quiz`               | 4-step discovery quiz  | Implemented   |
 | `/thank-you`          | Post-quiz thank you    | Implemented   |
-| `/debug`              | Prototype debug panel  | Implemented   |
+| `/book-discovery`     | Demo booking intent    | Implemented   |
+| `/debug`              | Prototype debug panel  | Disabled unless `VITE_ASGX_ENABLE_DEBUG=true` |
 | `/faq`                | FAQ page               | Implemented   |
 | `/privacy-policy`     | Privacy policy         | Implemented   |
 | `/referral-disclosure`| Referral disclosure    | Implemented   |
@@ -54,6 +60,9 @@ Then open `http://localhost:5173` in your browser.
   interests, and consent
 - Quiz scoring and outcome routing (`explore` / `review` / `not_now`)
 - `sessionStorage` persistence (`asgXQuizSubmission`, `asgXQuizOutcome`)
+- Local booking intent capture in `sessionStorage` under `asgXBookingIntent`
+- Demo banner when `VITE_ASGX_DEMO_MODE=true`
+- Debug gating: `/debug` shows a safe disabled message unless explicitly enabled
 - Australian mobile number validation
 - Responsive layout across mobile, tablet, and desktop
 
@@ -63,13 +72,15 @@ Then open `http://localhost:5173` in your browser.
   the future asset (line ~147 in `LandingPage.tsx`)
 - **Service image cards**: Professional-category placeholders with letter
   monograms and clear `aria-label` descriptions (line ~308 in `LandingPage.tsx`)
-- **"Book a discovery call" buttons**: All are `<button type="button">`
-  placeholders with `aria-label`. No booking integration wired.
-- **Firebase / Firestore**: Stubbed in `src/lib/firebase.ts` and
-  `src/lib/leadSubmission.ts` with TODO comments. Not connected.
-- **Submission adapter**: Local mock only (`src/lib/submissionAdapter.ts`).
-  Builds a future-ready payload and stores it in `sessionStorage`. No external
-  API calls, no CRM, no Firebase.
+- **Booking step**: `/book-discovery` saves preferred discovery call details to
+  `sessionStorage` only. No booking provider, calendar event, email, SMS, Zoom,
+  Calendly, CRM, or external API is connected.
+- **Firebase / Firestore**: Available only through the local emulator scaffold
+  when explicitly enabled with local env vars. Production Firebase is not
+  connected.
+- **Submission adapter**: Mock mode is the default
+  (`src/lib/submissionAdapter.ts`). It builds a future-ready payload and stores
+  it in `sessionStorage`. No CRM or production Firebase writes occur.
 
 ## Phase 3A — Local submission data model
 
@@ -106,6 +117,7 @@ A typed data model and local mock submission adapter have been implemented:
 | `asgXUtmData` | UTM parameters from URL or previously stored |
 | `asgXLeadPayloadValidation` | Pre-submission validation result (errors + warnings) |
 | `asgXFirestoreResult` | Firestore emulator write result (firebase mode only) |
+| `asgXBookingIntent` | Demo-only preferred discovery call details |
 
 ## Phase 3B — Integration readiness and debug visibility
 
@@ -129,8 +141,9 @@ Returns `{ valid, errors[], warnings[] }`. No external dependencies.
 4. Returns `success: false` with errors if validation fails
 
 ### Debug page (`/debug`)
-- Accessible at `/debug` — **for prototype use only**
-- Displays all 5 sessionStorage keys as formatted JSON sections
+- Accessible at `/debug` only when `VITE_ASGX_ENABLE_DEBUG=true`
+- Shows "Debug view is disabled for this environment." when debug is off
+- Displays prototype sessionStorage keys as formatted JSON sections
 - Includes "Clear all ASG‑x data" button to reset session storage
 - Yellow warning banner: "Prototype debug view only. Do not expose publicly in production"
 - Styled with the dark ASG‑x theme
@@ -180,8 +193,10 @@ configured with `.env` variables and `VITE_USE_FIREBASE_EMULATOR=true`.
 See `.env.example` for the full template. Key variables:
 
 - `VITE_ASGX_SUBMISSION_MODE` — `"mock"` (default) or `"firebase"`
+- `VITE_ASGX_ENABLE_DEBUG` — set to `"true"` only for local QA/debug sessions
+- `VITE_ASGX_DEMO_MODE` — set to `"true"` for the subtle demo preview banner
 - `VITE_FIREBASE_API_KEY` through `VITE_FIREBASE_APP_ID` — Firebase config
-- `VITE_USE_FIREBASE_EMULATOR` — set to `"true"` for emulator connection
+- `VITE_USE_FIREBASE_EMULATOR` — set to `"true"` only for local emulator connection
 
 No real `.env` file exists. No secrets are hardcoded.
 
@@ -338,7 +353,69 @@ Visit `/debug` after quiz submission. The 3rd section displays the Firestore wri
 
 Phase 5B: Firebase Functions local emulator scaffold (documented in `docs/asg-x-phase-5b-functions-plan.md`), if approved.
 
-### Session storage keys (all 6)
+## Phase 5A-Demo — Vercel preview funnel
+
+### Preview status
+
+The deployed Vercel build is for visual/demo review only. The safe default
+submission mode is `mock`, so quiz submissions stay in browser
+`sessionStorage`. The app builds without `.env.local`.
+
+Recommended Vercel preview variables:
+
+```env
+VITE_ASGX_SUBMISSION_MODE=mock
+VITE_ASGX_ENABLE_DEBUG=false
+VITE_ASGX_DEMO_MODE=true
+```
+
+### Demo flow
+
+1. `/` — Landing page with "Start online enquiry" and "Book a discovery call"
+   CTAs.
+2. `/quiz` — Four-step enquiry quiz with local mock submission.
+3. `/thank-you` — Soft outcome, local reference ID when available, public-safe
+   next-step copy, and a booking CTA.
+4. `/book-discovery` — Demo-only booking intent form saved under
+   `asgXBookingIntent`.
+5. `/debug` — Disabled unless `VITE_ASGX_ENABLE_DEBUG=true`.
+
+### What works in demo
+
+- Landing page CTAs route to the intended demo pages.
+- Quiz submission stores local quiz, outcome, validation, UTM, and lead payload
+  state in `sessionStorage`.
+- Thank-you page shows the soft outcome, local reference ID if available, and
+  booking status without exposing the internal score.
+- Booking intent form captures name, email, mobile, preferred day, preferred
+  time window, and notes locally.
+- Demo banner appears when `VITE_ASGX_DEMO_MODE=true`.
+
+### What is still mocked
+
+- Submission persistence outside the browser
+- Booking and calendar workflow
+- Follow-up process
+- Partner handoff process
+- Firebase Firestore outside local emulator testing
+
+### What is not connected
+
+- Production Firebase
+- CRM
+- SMS or email automation
+- Calendly, Zoom, or real calendar booking
+- Real referral/introduction workflow
+- Production analytics or tracking integrations
+
+### Next recommended production-readiness phase
+
+Proceed to Phase 5B only after approval: build a Firebase Functions local
+emulator scaffold with server-side validation, audit logging, rate limiting,
+App Check planning, and production security rules documented before any live
+integration work.
+
+### Session storage keys
 | Key | Contents |
 |-----|----------|
 | `asgXQuizSubmission` | Raw quiz form data + score + outcome |
@@ -347,6 +424,7 @@ Phase 5B: Firebase Functions local emulator scaffold (documented in `docs/asg-x-
 | `asgXLeadPayloadValidation` | Pre-submission validation result |
 | `asgXFirestoreResult` | Firestore emulator write result (firebase mode only) |
 | `asgXUtmData` | UTM parameters from URL or previously stored |
+| `asgXBookingIntent` | Demo-only preferred discovery call details |
 
 ## Phase 3C — Prototype hardening, fixtures, and QA
 

@@ -16,11 +16,18 @@ function hasFirebaseConfig(): boolean {
   )
 }
 
-function isEmulatorMode(): boolean {
+export function isFirebaseEmulatorMode(): boolean {
   return import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true'
 }
 
 async function initFirebase() {
+  if (!isFirebaseEmulatorMode()) {
+    console.warn(
+      '[firebaseClient] Firebase emulator mode is disabled. Firebase features unavailable.'
+    )
+    return
+  }
+
   if (!hasFirebaseConfig()) {
     console.warn(
       '[firebaseClient] Firebase config is missing. Set VITE_FIREBASE_API_KEY and VITE_FIREBASE_PROJECT_ID in .env. Firebase features unavailable.'
@@ -47,12 +54,10 @@ async function initFirebase() {
     _app = initializeApp(config)
     _db = getFirestore(_app)
 
-    if (isEmulatorMode()) {
-      connectFirestoreEmulator(_db, 'localhost', 8080)
-      console.info(
-        '[firebaseClient] Connected to Firestore emulator (localhost:8080).'
-      )
-    }
+    connectFirestoreEmulator(_db, 'localhost', 8080)
+    console.info(
+      '[firebaseClient] Connected to Firestore emulator (localhost:8080).'
+    )
 
     console.info('[firebaseClient] Firebase initialised successfully.')
   } catch (error) {

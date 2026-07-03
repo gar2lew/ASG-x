@@ -105,7 +105,7 @@ export async function buildAndSaveLeadPayload(
     localSubmissionId,
     timestamp: now,
     message:
-      `Your enquiry details have been captured (mode: ${mode}).${modeLabel} The next production phase will connect this flow to the approved CRM and follow-up process.`,
+      `Your enquiry details have been captured in this demo (mode: ${mode}).${modeLabel} In production, the ASG-x follow-up process would continue from here.`,
     validation,
   }
 }

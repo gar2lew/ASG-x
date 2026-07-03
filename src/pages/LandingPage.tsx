@@ -177,13 +177,13 @@ export default function LandingPage() {
             >
               Start online enquiry
             </Link>
-            <button
-              type="button"
+            <Link
+              to="/book-discovery"
               aria-label="Book a no-obligation discovery call"
               className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-transparent text-white border border-brass-gold rounded-lg transition-all duration-300 hover:bg-brass-gold hover:bg-opacity-10 hover:-translate-y-[3px]"
             >
               Book a discovery call
-            </button>
+            </Link>
           </div>
           <div className="flex flex-wrap gap-3 justify-center">
             <span className="trust-badge">Online discovery appointments</span>
@@ -258,7 +258,7 @@ export default function LandingPage() {
               <ul className="space-y-3">
                 {[
                   'Those with insufficient superannuation balance',
-                  'People seeking guaranteed returns',
+                  'People seeking certainty of investment returns',
                   'Those unwilling to seek professional advice',
                   'Individuals uncomfortable with investment risk',
                   'People who need immediate access to their super',
@@ -449,13 +449,13 @@ export default function LandingPage() {
             >
               Start online enquiry
             </Link>
-            <button
-              type="button"
+            <Link
+              to="/book-discovery"
               aria-label="Book a no-obligation discovery call"
               className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-transparent text-white border border-brass-gold rounded-lg transition-all duration-300 hover:bg-brass-gold hover:bg-opacity-10 hover:-translate-y-[3px]"
             >
               Book a discovery call
-            </button>
+            </Link>
           </div>
         </div>
       </section>

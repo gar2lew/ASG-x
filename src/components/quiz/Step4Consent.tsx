@@ -41,7 +41,7 @@ export default function Step4Consent({ onSubmit, onBack, defaultValues }: Step4C
     {
       name: 'consentPartnerSharing',
       label:
-        'I consent to my details being shared with relevant licensed/approved partners (financial advisers, SMSF specialists, finance brokers) where required for referral purposes',
+        'I consent to my details being shared with relevant licensed or appropriately qualified partners (financial advisers, SMSF specialists, finance brokers) where required for referral purposes',
     },
     {
       name: 'consentPrivacy',

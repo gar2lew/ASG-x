@@ -7,6 +7,7 @@ import PrivacyPolicyPage from '@/pages/PrivacyPolicyPage'
 import ReferralDisclosurePage from '@/pages/ReferralDisclosurePage'
 import MultiStepQuiz from '@/components/quiz/MultiStepQuiz'
 import DebugPage from '@/pages/DebugPage'
+import BookDiscoveryPage from '@/pages/BookDiscoveryPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/quiz" element={<MultiStepQuiz />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/book-discovery" element={<BookDiscoveryPage />} />
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/referral-disclosure" element={<ReferralDisclosurePage />} />

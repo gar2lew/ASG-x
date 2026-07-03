@@ -468,7 +468,7 @@ export default function MultiStepQuiz() {
                     I consent to being contacted by phone, SMS, and email about my enquiry.
                   </ConsentCheckbox>
                   <ConsentCheckbox name="referralConsent" data={data} dispatch={dispatch} errors={errors}>
-                    I consent to my details being shared with relevant licensed or approved professionals where required for referral purposes.
+                    I consent to my details being shared with relevant licensed or appropriately qualified professionals where required for referral purposes.
                   </ConsentCheckbox>
                 </>
               )}

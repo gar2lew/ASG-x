@@ -9,7 +9,7 @@
  */
 import type { AsgXLeadPayload, AsgXSubmissionStatus } from '@/types/asgx'
 import { validateLeadPayload, type ValidationResult } from '@/lib/leadPayloadValidation'
-import { getFirestoreDb, isFirebaseAvailable } from '@/lib/firebaseClient'
+import { getFirestoreDb, isFirebaseEmulatorMode } from '@/lib/firebaseClient'
 
 interface FirestoreSubmissionResult extends AsgXSubmissionStatus {
   validation: ValidationResult
@@ -105,13 +105,13 @@ export async function submitToFirestore(
     }
   }
 
-  if (!isFirebaseAvailable()) {
+  if (!isFirebaseEmulatorMode()) {
     return {
       success: false,
       localSubmissionId: payload.submissionId,
       timestamp: now,
       message:
-        'Firebase is not available. Ensure config is set and emulator is running. Submit in mock mode for local-only capture.',
+        'Firebase emulator mode is disabled. Submit in mock mode for local-only capture.',
       firestoreDocId: null,
       validation,
     }
