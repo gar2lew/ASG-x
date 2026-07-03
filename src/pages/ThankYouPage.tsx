@@ -63,25 +63,27 @@ export default function ThankYouPage() {
   const bookingStatus = readBookingStatus()
 
   return (
-    <div className="bg-navy-50 px-4 py-12">
-      <div className="mx-auto max-w-4xl">
-        <div className="rounded-lg border border-navy-200 bg-white p-6 shadow-lg shadow-navy-900/5 sm:p-10">
-          <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-wide text-brass-600">
+    <div className="bg-obsidian px-4 py-16 text-white md:py-24">
+      <div className="mx-auto max-w-5xl">
+        <div className="glass-panel p-6 sm:p-10 lg:p-12">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brass-gold">
               Enquiry captured
             </p>
-            <h1 className="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">
+            <h1 className="mt-4 font-display text-4xl font-light text-white sm:text-5xl">
               Thank you
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-navy-700">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-white/70">
               Your enquiry has been captured in this demo. {message}
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <section className="rounded-lg border border-navy-200 bg-navy-50 p-5">
-              <h2 className="text-xl font-bold text-navy-900">Demo summary</h2>
-              <dl className="mt-5 space-y-4 text-sm">
+          <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+            <section className="premium-card brass-corners">
+              <h2 className="font-display text-2xl font-light text-white">
+                Demo summary
+              </h2>
+              <dl className="mt-6 space-y-4 text-sm">
                 <SummaryRow label="Name" value={name ?? 'Not provided'} />
                 <SummaryRow label="Outcome" value={message} />
                 <SummaryRow
@@ -92,21 +94,24 @@ export default function ThankYouPage() {
               </dl>
             </section>
 
-            <section className="rounded-lg border border-brass-200 bg-brass-50 p-5">
-              <h2 className="text-xl font-bold text-navy-900">
+            <section className="rounded-2xl border border-brass-gold/25 bg-card-surface p-6">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass-gold">
+                Next step
+              </p>
+              <h2 className="mt-3 font-display text-2xl font-light text-white">
                 What would happen next
               </h2>
-              <div className="mt-4 space-y-3 text-sm leading-6 text-navy-700">
+              <div className="mt-5 space-y-4 text-sm leading-6 text-white/70">
                 <p>
-                  In production, the ASG-x follow-up process would continue
-                  from here.
+                  In production, the Amplify X-Change follow-up process would
+                  continue from here.
                 </p>
                 <p>
                   A licensed or appropriately qualified professional may be
                   required before any personal advice or next steps are
                   considered.
                 </p>
-                <p className="rounded-lg border border-brass-200 bg-white/70 p-3 text-xs">
+                <p className="rounded-lg border border-brass-gold/20 bg-obsidian/60 p-4 text-xs leading-5 text-white/55">
                   Prototype-only: no CRM, email, SMS, calendar, Zoom, Calendly,
                   or production Firebase integration is connected.
                 </p>
@@ -114,10 +119,10 @@ export default function ThankYouPage() {
             </section>
           </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <Link
               to="/book-discovery"
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-brass-500 px-6 py-3 font-bold text-navy-950 transition hover:bg-brass-400"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-brass-gold px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-obsidian transition hover:bg-brass-gold-light"
               aria-label="Book a discovery call"
             >
               <CalendarCheck className="h-5 w-5" />
@@ -125,19 +130,19 @@ export default function ThankYouPage() {
             </Link>
             <Link
               to="/"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-navy-200 px-6 py-3 font-semibold text-navy-700 transition hover:bg-navy-50"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-brass-gold/50 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-brass-gold/10"
             >
               <Home className="h-5 w-5" />
               Back to home
             </Link>
           </div>
 
-          <div className="mt-8 rounded-lg border border-navy-200 bg-navy-50 p-4 text-left text-sm leading-6 text-navy-700">
-            ASG-x provides general information and education services only. We
-            do not provide personal financial advice. SMSF property pathways
-            involve risks and costs, and may not be suitable for everyone.
-            Speak with licensed professionals before making decisions about
-            your superannuation.
+          <div className="mt-10 rounded-lg border border-white/10 bg-obsidian/55 p-4 text-left text-xs leading-6 text-white/55">
+            Amplify X-Change provides general information and education
+            services only. We do not provide personal financial advice. SMSF
+            property pathways involve risks and costs, and may not be suitable
+            for everyone. Speak with licensed professionals before making
+            decisions about your superannuation.
           </div>
         </div>
       </div>
@@ -147,9 +152,11 @@ export default function ThankYouPage() {
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <dt className="font-semibold text-navy-500">{label}</dt>
-      <dd className="mt-1 break-words text-navy-900">{value}</dd>
+    <div className="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+      <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-brass-gold/85">
+        {label}
+      </dt>
+      <dd className="mt-2 break-words leading-6 text-white/80">{value}</dd>
     </div>
   )
 }

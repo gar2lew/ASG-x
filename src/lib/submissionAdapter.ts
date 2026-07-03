@@ -105,7 +105,7 @@ export async function buildAndSaveLeadPayload(
     localSubmissionId,
     timestamp: now,
     message:
-      `Your enquiry details have been captured in this demo (mode: ${mode}).${modeLabel} In production, the ASG-x follow-up process would continue from here.`,
+      `Your enquiry details have been captured in this demo (mode: ${mode}).${modeLabel} In production, the Amplify X-Change follow-up process would continue from here.`,
     validation,
   }
 }

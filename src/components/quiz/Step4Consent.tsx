@@ -26,7 +26,7 @@ export default function Step4Consent({ onSubmit, onBack, defaultValues }: Step4C
     {
       name: 'consentAdvice',
       label:
-        'I understand this is general information only and ASG-x does not provide personal financial advice unless provided by an appropriately licensed representative',
+        'I understand this is general information only and Amplify X-Change does not provide personal financial advice unless provided by an appropriately licensed representative',
     },
     {
       name: 'consentRisks',
@@ -120,7 +120,7 @@ export default function Step4Consent({ onSubmit, onBack, defaultValues }: Step4C
       {/* Compliance notice */}
       <div className="bg-navy-50 border border-navy-200 rounded-lg p-4 mt-4">
         <p className="text-navy-600 text-xs">
-          This service provides general information only. ASG-x does not provide personal
+          This service provides general information only. Amplify X-Change does not provide personal
           financial advice. Any decisions regarding SMSF property investment should be made
           in consultation with a licensed financial adviser who considers your individual
           circumstances.

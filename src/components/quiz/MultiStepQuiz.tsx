@@ -337,10 +337,10 @@ function ErrorText({ children }: { children?: ReactNode }) {
 function ComplianceNote() {
   return (
     <div className="rounded-lg border border-navy-200 bg-navy-50 p-4 text-xs leading-5 text-navy-700">
-      ASG-x provides general information and education services only. We do not
-      provide personal financial advice. SMSF property pathways involve risks
-      and costs, and may not be suitable for everyone. Speak with licensed
-      professionals before making decisions about your superannuation.
+      Amplify X-Change provides general information and education services
+      only. We do not provide personal financial advice. SMSF property pathways
+      involve risks and costs, and may not be suitable for everyone. Speak with
+      licensed professionals before making decisions about your superannuation.
     </div>
   )
 }
@@ -391,7 +391,7 @@ export default function MultiStepQuiz() {
     <section className="bg-navy-50 px-4 py-10">
       <div className="mx-auto max-w-3xl">
         <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-navy-900">ASG-x Discovery Quiz</h1>
+          <h1 className="text-3xl font-bold text-navy-900">Amplify X-Change Discovery Quiz</h1>
           <p className="mt-2 text-sm text-navy-600">
             Explore whether this pathway may be worth discussing with licensed professionals.
           </p>
@@ -459,7 +459,7 @@ export default function MultiStepQuiz() {
                     I understand this quiz provides general information only.
                   </ConsentCheckbox>
                   <ConsentCheckbox name="noPersonalAdviceAcknowledgement" data={data} dispatch={dispatch} errors={errors}>
-                    I understand ASG-x does not provide personal financial advice.
+                    I understand Amplify X-Change does not provide personal financial advice.
                   </ConsentCheckbox>
                   <ConsentCheckbox name="riskAndCostsAcknowledgement" data={data} dispatch={dispatch} errors={errors}>
                     I understand SMSF property pathways involve risks, costs, and may not be suitable for everyone.

@@ -126,7 +126,7 @@ function DebugPanel() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="font-display text-3xl font-light text-white">
-              ASG‑x Debug Panel
+              Amplify X-Change Debug Panel
             </h1>
             <p className="text-white/50 text-sm mt-1">
               Local prototype inspection only
@@ -146,7 +146,7 @@ function DebugPanel() {
               className="px-4 py-2 text-sm bg-red-800/40 border border-red-500/40 text-red-200 rounded-lg hover:bg-red-800/60 transition flex items-center gap-2"
             >
               <Trash2 className="h-4 w-4" />
-              Clear all ASG‑x data
+              Clear all Amplify X-Change data
             </button>
           </div>
         </div>
@@ -154,7 +154,7 @@ function DebugPanel() {
         {!hasData && (
           <div className="rounded-lg border border-white/10 bg-card-surface p-10 text-center">
             <p className="text-white/50 text-lg">
-              No ASG‑x session data found. Complete the quiz to generate payloads.
+              No Amplify X-Change session data found. Complete the quiz to generate payloads.
             </p>
             <Link
               to="/quiz"

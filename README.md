@@ -1,12 +1,12 @@
-# ASG‑x Online SMSF Property Pathway
+# Amplify X-Change Online SMSF Property Pathway
 
 **Status:** Vercel preview/demo prototype — pre-production and demo-safe
 
 ## What this is
 
-ASG‑x by Amplify Solutions Group is an online‑first enquiry and discovery pathway
-designed to help Australians understand the general process, risks, costs, and
-professional support involved in SMSF property investment.
+Amplify X-Change by Amplify Solutions Group is an online‑first enquiry and
+discovery pathway designed to help Australians understand the general process,
+risks, costs, and professional support involved in SMSF property investment.
 
 This prototype delivers a safe internal-review demo of:
 
@@ -19,6 +19,74 @@ This prototype delivers a safe internal-review demo of:
 
 No production Firebase, CRM, SMS/email automation, real calendar booking,
 Calendly, Zoom, or referral workflow is connected.
+
+## Current demo snapshot
+
+- **Current public brand:** Amplify X-Change by Amplify Solutions Group
+- **Current campaign:** SMSF Property Pathway
+- **Demo posture:** Vercel preview/demo mode, pre-production, mock submissions
+
+### Current route list
+
+| Route | Purpose | Demo behaviour |
+|-------|---------|----------------|
+| `/` | Landing page | Educational SMSF Property Pathway funnel with residential, commercial, comparison, scenario, calculator, and CTA sections |
+| `/quiz` | Discovery quiz | Four-step enquiry quiz using local mock submission handling |
+| `/thank-you` | Post-quiz page | Shows enquiry captured, soft outcome, reference ID when available, and next-step CTAs |
+| `/book-discovery` | Booking intent | Captures preferred discovery call details in browser `sessionStorage` only |
+| `/debug` | Prototype debug panel | Disabled unless `VITE_ASGX_ENABLE_DEBUG=true` |
+
+### What works in Vercel demo mode
+
+- Public Amplify X-Change branding and SMSF Property Pathway campaign pages
+- Landing page education sections for residential and commercial pathways
+- Residential vs commercial comparison and illustrative scenario cards
+- Super vs SMSF Property Scenario Tool using editable local assumptions
+- Quiz flow, local outcome calculation, and thank-you routing
+- Demo booking intent form saved under `asgXBookingIntent`
+- Demo banner when `VITE_ASGX_DEMO_MODE=true`
+- Debug route disabled by default for public demo environments
+
+### What remains mocked
+
+- Lead submission persistence outside the browser
+- Discovery booking/calendar workflow
+- Follow-up process and handoff workflow
+- Firebase writes except local emulator testing when explicitly configured
+- Scenario calculator outputs, which are illustrative and based only on local assumptions
+
+### What is not connected
+
+- Production Firebase or production Firestore
+- CRM systems
+- SMS or email automation
+- Calendly, Zoom, or any real booking provider
+- Referral/introduction workflow
+- Production analytics or tracking integrations
+
+### Required Vercel demo env values
+
+```env
+VITE_ASGX_SUBMISSION_MODE=mock
+VITE_ASGX_DEMO_MODE=true
+VITE_ASGX_ENABLE_DEBUG=false
+VITE_USE_FIREBASE_EMULATOR=false
+```
+
+### Production blockers
+
+- Server-side submission endpoint, validation, consent logging, and abuse controls are not implemented.
+- Production Firebase security rules and deployment targets are not configured.
+- CRM, booking, SMS, email, analytics, and referral handoff requirements are not approved or connected.
+- Privacy, compliance, data retention, and operational review must be completed before handling live enquiries.
+- `/debug` must remain disabled or be removed from any public production build.
+
+### Next recommended phase
+
+Plan the production submission and booking architecture before connecting live
+services. The likely next step is a Firebase Functions local emulator scaffold
+with server-side validation, consent/audit logging, rate limiting, App Check
+planning, and production security rules documented before any deployment.
 
 ## Tech stack
 
@@ -56,6 +124,11 @@ Then open `http://localhost:5173` in your browser.
 
 - Dark editorial landing page with premium design direction (brass accents,
   glass morphism overlays, premium card treatments, brass corner brackets)
+- Expanded SMSF property education sections covering residential and commercial
+  pathways, a comparison table, illustrative scenarios, and professional
+  support roles
+- Local-only illustrative scenario calculator comparing an ordinary super fund
+  pathway with an SMSF property pathway using editable assumptions
 - 4-step quiz collecting name, contact, SMSF status, super balance, property
   interests, and consent
 - Quiz scoring and outcome routing (`explore` / `review` / `not_now`)
@@ -72,6 +145,8 @@ Then open `http://localhost:5173` in your browser.
   the future asset (line ~147 in `LandingPage.tsx`)
 - **Service image cards**: Professional-category placeholders with letter
   monograms and clear `aria-label` descriptions (line ~308 in `LandingPage.tsx`)
+- **Scenario calculator**: Uses React local state only. Results are illustrative,
+  based on editable assumptions, and are not stored or sent anywhere.
 - **Booking step**: `/book-discovery` saves preferred discovery call details to
   `sessionStorage` only. No booking provider, calendar event, email, SMS, Zoom,
   Calendly, CRM, or external API is connected.
@@ -144,9 +219,9 @@ Returns `{ valid, errors[], warnings[] }`. No external dependencies.
 - Accessible at `/debug` only when `VITE_ASGX_ENABLE_DEBUG=true`
 - Shows "Debug view is disabled for this environment." when debug is off
 - Displays prototype sessionStorage keys as formatted JSON sections
-- Includes "Clear all ASG‑x data" button to reset session storage
+- Includes "Clear all Amplify X-Change data" button to reset session storage
 - Yellow warning banner: "Prototype debug view only. Do not expose publicly in production"
-- Styled with the dark ASG‑x theme
+- Styled with the dark Amplify X-Change theme
 - Not linked from public-facing pages
 
 ### Documentation
@@ -365,8 +440,9 @@ Recommended Vercel preview variables:
 
 ```env
 VITE_ASGX_SUBMISSION_MODE=mock
-VITE_ASGX_ENABLE_DEBUG=false
 VITE_ASGX_DEMO_MODE=true
+VITE_ASGX_ENABLE_DEBUG=false
+VITE_USE_FIREBASE_EMULATOR=false
 ```
 
 ### Demo flow

@@ -14,7 +14,7 @@ export default function ReferralDisclosurePage() {
               How Our Referral Service Works
             </h2>
             <p>
-              ASG-x provides general information about SMSF property pathways.
+              Amplify X-Change provides general information about SMSF property pathways.
               We are not a financial advice provider. If, after completing our
               quiz and discovery call, it may be appropriate for you to seek
               personal advice, we can refer you to licensed professionals
@@ -28,10 +28,10 @@ export default function ReferralDisclosurePage() {
               Referral Fees
             </h2>
             <p>
-              ASG-x may receive a referral fee or commission from licensed
+              Amplify X-Change may receive a referral fee or commission from licensed
               professional partners when we refer you to them and you proceed
               to engage their services. These referral fees are a commercial
-              arrangement between ASG-x and our partners and are disclosed to
+              arrangement between Amplify X-Change and our partners and are disclosed to
               you in the interests of transparency.
             </p>
           </section>
@@ -81,7 +81,7 @@ export default function ReferralDisclosurePage() {
               No Impact on Cost
             </h2>
             <p>
-              Any referral fee paid to ASG-x by our partners does not increase
+              Any referral fee paid to Amplify X-Change by our partners does not increase
               the cost of services to you. Professional partners set their own
               fees independently, and the referral fee is paid from the
               partner's commercial arrangements — not added to your invoice.
@@ -117,7 +117,7 @@ export default function ReferralDisclosurePage() {
         <div className="mt-12 bg-navy-50 border border-navy-200 rounded-lg p-6 text-center">
           <p className="text-sm text-navy-600">
             This disclosure is provided in accordance with Australian consumer
-            law and regulatory requirements. ASG-x is not a licensed financial
+            law and regulatory requirements. Amplify X-Change is not a licensed financial
             advice provider and does not hold an Australian Financial Services
             Licence (AFSL). All referrals are to appropriately licensed
             professionals.

@@ -5,7 +5,7 @@ export default function Header() {
     <header className="bg-obsidian border-b border-white/5 flex items-center justify-between px-4 py-3 md:px-8">
       <div className="flex items-center gap-3">
         <Link to="/" className="text-brass-gold font-display font-light text-2xl tracking-tight">
-          ASG‑x
+          Amplify X-Change
         </Link>
         <span className="text-white/40 text-sm hidden sm:inline">
           Online SMSF Property Pathway

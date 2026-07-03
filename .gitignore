@@ -39,3 +39,7 @@ Stellar-Launch---Launcher-Awards/
 # Temporary files
 tmp/
 temp/.codex/
+.codex/**
+.codex/
+# Local AI/editor notes
+

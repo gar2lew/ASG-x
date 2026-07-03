@@ -14,7 +14,7 @@ function isNonEmptyString(value: unknown): value is string {
 
 /**
  * Lightweight local validation for AsgXLeadPayload.
- * Runs before the payload would be submitted to CRM/Firebase.
+ * Runs before any future external handoff path.
  * In this prototype, runs as part of the local mock adapter.
  */
 export function validateLeadPayload(payload: AsgXLeadPayload): ValidationResult {

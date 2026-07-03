@@ -1,6 +1,6 @@
 import { useMemo, useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
-import { CheckCircle } from 'lucide-react'
+import { CheckCircle, Home, ArrowLeft } from 'lucide-react'
 import { outcomeMessages, type QuizOutcome } from '@/lib/scoring'
 
 interface BookingIntent {
@@ -110,16 +110,16 @@ export default function BookDiscoveryPage() {
   }
 
   return (
-    <section className="bg-navy-50 px-4 py-12">
-      <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="rounded-lg border border-navy-200 bg-white p-6 shadow-lg shadow-navy-900/5 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-wide text-brass-600">
-            Discovery conversation
+    <section className="bg-obsidian px-4 py-16 text-white md:py-24">
+      <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="glass-panel p-6 sm:p-8 lg:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brass-gold">
+            Book a discovery conversation
           </p>
-          <h1 className="mt-3 text-3xl font-bold text-navy-900 sm:text-4xl">
+          <h1 className="mt-4 font-display text-4xl font-light text-white sm:text-5xl">
             Choose a preferred time for a discovery call
           </h1>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-navy-700">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-white/65">
             This demo captures your preferred call details locally only. No
             calendar event, email, SMS, CRM record, or external booking is
             created.
@@ -134,7 +134,7 @@ export default function BookDiscoveryPage() {
             <div className="grid gap-5 sm:grid-cols-2">
               <TextField label="Preferred day" value={form.preferredDay} placeholder="e.g. Tuesday" onChange={(value) => updateField('preferredDay', value)} required />
               <label className="block">
-                <span className="block text-sm font-semibold text-navy-800">
+                <span className="block text-sm font-semibold text-white/80">
                   Preferred time window
                 </span>
                 <select
@@ -143,7 +143,7 @@ export default function BookDiscoveryPage() {
                     updateField('preferredTimeWindow', event.target.value)
                   }
                   required
-                  className="mt-2 w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 outline-none transition focus:border-brass-500 focus:ring-2 focus:ring-brass-200"
+                  className="mt-2 w-full rounded-lg border border-white/10 bg-obsidian/70 px-4 py-3 text-white outline-none transition focus:border-brass-gold focus:ring-2 focus:ring-brass-gold/20"
                 >
                   <option value="">Select a window</option>
                   {timeWindows.map((window) => (
@@ -155,14 +155,14 @@ export default function BookDiscoveryPage() {
               </label>
             </div>
             <label className="block">
-              <span className="block text-sm font-semibold text-navy-800">
+              <span className="block text-sm font-semibold text-white/80">
                 Notes
               </span>
               <textarea
                 value={form.notes}
                 onChange={(event) => updateField('notes', event.target.value)}
                 rows={4}
-                className="mt-2 w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 outline-none transition focus:border-brass-500 focus:ring-2 focus:ring-brass-200"
+                className="mt-2 w-full rounded-lg border border-white/10 bg-obsidian/70 px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-brass-gold focus:ring-2 focus:ring-brass-gold/20"
                 placeholder="Optional context for the discovery conversation"
               />
             </label>
@@ -170,44 +170,58 @@ export default function BookDiscoveryPage() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <button
                 type="submit"
-                className="rounded-lg bg-brass-500 px-6 py-3 font-bold text-navy-950 transition hover:bg-brass-400"
+                className="rounded-lg bg-brass-gold px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-obsidian transition hover:bg-brass-gold-light"
               >
                 Save preferred time
               </button>
               <Link
-                to="/"
-                className="inline-flex justify-center rounded-lg border border-navy-200 px-6 py-3 font-semibold text-navy-700 transition hover:bg-navy-50"
+                to="/thank-you"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-brass-gold/50 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-brass-gold/10"
               >
-                Back to home
+                <ArrowLeft className="h-4 w-4" />
+                Back to thank you
               </Link>
             </div>
           </form>
 
           {saved && (
-            <div className="mt-6 flex gap-3 rounded-lg border border-green-200 bg-green-50 p-4 text-sm leading-6 text-green-900">
-              <CheckCircle className="mt-0.5 h-5 w-5 shrink-0" />
+            <div className="mt-6 flex gap-3 rounded-lg border border-brass-gold/30 bg-brass-gold/10 p-4 text-sm leading-6 text-white/75">
+              <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-brass-gold" />
               <p>
                 Your preferred discovery call details have been captured in this
-                demo. In production, this step will connect to the ASG-x
+                demo. In production, this step will connect to the approved
                 booking and follow-up process.
               </p>
             </div>
           )}
         </div>
 
-        <aside className="rounded-lg border border-navy-200 bg-white p-6 shadow-lg shadow-navy-900/5">
-          <h2 className="text-xl font-bold text-navy-900">Demo summary</h2>
-          <dl className="mt-5 space-y-4 text-sm">
+        <aside className="rounded-2xl border border-brass-gold/25 bg-card-surface p-6 shadow-[0_24px_60px_rgba(0,0,0,0.45)] lg:self-start">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brass-gold">
+            Prototype summary
+          </p>
+          <h2 className="mt-3 font-display text-2xl font-light text-white">
+            Demo summary
+          </h2>
+          <dl className="mt-6 space-y-4 text-sm">
             <SummaryRow label="Name" value={summary.name ?? 'Not provided'} />
             <SummaryRow label="Outcome" value={summary.outcomeLabel ?? 'Not available'} />
             <SummaryRow label="Reference ID" value={summary.referenceId ?? 'Not available'} />
             <SummaryRow label="Booking intent" value={summary.bookingIntentStatus} />
           </dl>
-          <p className="mt-6 rounded-lg border border-brass-200 bg-brass-50 p-4 text-sm leading-6 text-navy-700">
-            In production, the ASG-x follow-up process would continue from
-            here. A licensed or appropriately qualified professional may be
-            required before any personal advice or next steps are considered.
+          <p className="mt-6 rounded-lg border border-brass-gold/20 bg-obsidian/60 p-4 text-sm leading-6 text-white/65">
+            In production, the Amplify X-Change follow-up process would
+            continue from here. A licensed or appropriately qualified
+            professional may be required before any personal advice or next
+            steps are considered.
           </p>
+          <Link
+            to="/"
+            className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg border border-white/10 px-5 py-3 text-sm font-semibold text-white/75 transition hover:border-brass-gold/50 hover:bg-brass-gold/10"
+          >
+            <Home className="h-4 w-4" />
+            Back to home
+          </Link>
         </aside>
       </div>
     </section>
@@ -231,14 +245,14 @@ function TextField({
 }) {
   return (
     <label className="block">
-      <span className="block text-sm font-semibold text-navy-800">{label}</span>
+      <span className="block text-sm font-semibold text-white/80">{label}</span>
       <input
         type={type}
         value={value}
         placeholder={placeholder}
         required={required}
         onChange={(event) => onChange(event.target.value)}
-        className="mt-2 w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 outline-none transition focus:border-brass-500 focus:ring-2 focus:ring-brass-200"
+        className="mt-2 w-full rounded-lg border border-white/10 bg-obsidian/70 px-4 py-3 text-white outline-none transition placeholder:text-white/30 focus:border-brass-gold focus:ring-2 focus:ring-brass-gold/20"
       />
     </label>
   )
@@ -246,9 +260,11 @@ function TextField({
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <dt className="font-semibold text-navy-500">{label}</dt>
-      <dd className="mt-1 break-words text-navy-900">{value}</dd>
+    <div className="border-b border-white/10 pb-3 last:border-b-0 last:pb-0">
+      <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-brass-gold/85">
+        {label}
+      </dt>
+      <dd className="mt-2 break-words leading-6 text-white/80">{value}</dd>
     </div>
   )
 }
