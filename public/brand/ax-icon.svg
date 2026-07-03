@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Amplify X-Change icon</title>
+  <desc id="desc">Square dark navy icon with brass AX monogram.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#101a2b"/>
+      <stop offset="0.55" stop-color="#06101d"/>
+      <stop offset="1" stop-color="#02050a"/>
+    </linearGradient>
+    <linearGradient id="brass" x1="42" y1="46" x2="202" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7e2a6"/>
+      <stop offset="0.48" stop-color="#c9993a"/>
+      <stop offset="1" stop-color="#8a641e"/>
+    </linearGradient>
+    <linearGradient id="ivory" x1="154" y1="47" x2="213" y2="111" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#d8d8d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="44" fill="url(#bg)"/>
+  <rect x="10" y="10" width="236" height="236" rx="38" fill="none" stroke="#b5a642" stroke-opacity="0.28" stroke-width="2"/>
+  <path fill="url(#brass)" d="M39 194 96 58h32L72 194H39Z"/>
+  <path fill="url(#brass)" d="M103 194h34l-31-57-18 39 15 18Z"/>
+  <path fill="url(#brass)" d="M131 194h38L110 58H78l53 136Z"/>
+  <path fill="#06101d" d="m91 153 17-39 18 36-19 42-16-39Z" opacity="0.88"/>
+  <path fill="url(#ivory)" d="m156 60 58-1-44 55-31 1 17-55Z" transform="skewX(-10)"/>
+  <path fill="#06101d" d="m165 119 17-24 18 31-22 36-13-43Z" opacity="0.9"/>
+</svg>

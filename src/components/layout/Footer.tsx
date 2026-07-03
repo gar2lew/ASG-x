@@ -3,7 +3,26 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <footer className="bg-obsidian border-t border-white/5 text-white/50 text-xs">
-      <div className="max-w-5xl mx-auto px-4 py-8 space-y-4">
+      <div className="max-w-5xl mx-auto px-4 py-8 space-y-5">
+        <div className="flex flex-col gap-4 border-b border-white/5 pb-5 sm:flex-row sm:items-center sm:justify-between">
+          <Link
+            to="/"
+            className="inline-flex max-w-[300px]"
+            aria-label="Amplify X-Change by Amplify Solutions Group"
+          >
+            <img
+              src="/brand/amplify-xchange-wordmark.svg"
+              alt="Amplify X-Change by Amplify Solutions Group"
+              className="h-14 w-auto"
+            />
+          </Link>
+          <img
+            src="/brand/ax-mark.svg"
+            alt=""
+            aria-hidden="true"
+            className="h-12 w-16 opacity-80"
+          />
+        </div>
         <p>
           Amplify X-Change by Amplify Solutions Group provides general
           information and education services only. We do not provide personal

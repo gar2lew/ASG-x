@@ -43,6 +43,9 @@ Calendly, Zoom, or referral workflow is connected.
 ### What works in Vercel demo mode
 
 - Public Amplify X-Change | Property Pathway campaign pages
+- Deploy-ready SVG brand assets under `public/brand/`
+- SVG favicon and touch icon configured in `index.html`
+- Header and footer render the Amplify X-Change wordmark assets
 - Landing page education sections for residential and commercial pathways
 - Residential vs commercial comparison and illustrative scenario cards
 - Super vs SMSF Property Scenario Tool using editable local assumptions
@@ -91,6 +94,18 @@ Plan the production submission and booking architecture before connecting live
 services. The likely next step is a Firebase Functions local emulator scaffold
 with server-side validation, consent/audit logging, rate limiting, App Check
 planning, and production security rules documented before any deployment.
+
+### Brand assets
+
+| Asset | Purpose |
+|-------|---------|
+| `public/brand/ax-mark.svg` | Standalone AX monogram for compact brand moments |
+| `public/brand/amplify-xchange-wordmark.svg` | Header/footer wordmark with Property Pathway and byline |
+| `public/brand/ax-icon.svg` | SVG favicon and app/touch icon reference |
+| `docs/amplify-xchange-brand-notes.md` | Naming, colour, logo, favicon, and public-copy guidance |
+
+The PNG draft boards in `docs/brand/` are reference material only. The web app
+uses the clean SVG assets above for deploy-ready brand presentation.
 
 ## Tech stack
 
