@@ -1,12 +1,14 @@
-# Amplify X-Change Online SMSF Property Pathway
+# Amplify X-Change | Property Pathway
 
 **Status:** Vercel preview/demo prototype — pre-production and demo-safe
 
 ## What this is
 
-Amplify X-Change by Amplify Solutions Group is an online‑first enquiry and
-discovery pathway designed to help Australians understand the general process,
-risks, costs, and professional support involved in SMSF property investment.
+Amplify X-Change by Amplify Solutions Group is opening up its property pathway
+education and discovery process to Australians nationwide — combining local
+experience with a guided, digital-first experience. The current demo includes
+general information about SMSF property considerations and connects users with
+the right professional support where required.
 
 This prototype delivers a safe internal-review demo of:
 
@@ -23,14 +25,16 @@ Calendly, Zoom, or referral workflow is connected.
 ## Current demo snapshot
 
 - **Current public brand:** Amplify X-Change by Amplify Solutions Group
-- **Current campaign:** SMSF Property Pathway
+- **Current campaign:** Amplify X-Change | Property Pathway
 - **Demo posture:** Vercel preview/demo mode, pre-production, mock submissions
+- **Current content focus:** SMSF-focused property education and enquiry flow
+  inside a broader Property Pathway campaign name
 
 ### Current route list
 
 | Route | Purpose | Demo behaviour |
 |-------|---------|----------------|
-| `/` | Landing page | Educational SMSF Property Pathway funnel with residential, commercial, comparison, scenario, calculator, and CTA sections |
+| `/` | Landing page | Educational Property Pathway funnel with SMSF-focused residential, commercial, comparison, scenario, calculator, and CTA sections |
 | `/quiz` | Discovery quiz | Four-step enquiry quiz using local mock submission handling |
 | `/thank-you` | Post-quiz page | Shows enquiry captured, soft outcome, reference ID when available, and next-step CTAs |
 | `/book-discovery` | Booking intent | Captures preferred discovery call details in browser `sessionStorage` only |
@@ -38,7 +42,7 @@ Calendly, Zoom, or referral workflow is connected.
 
 ### What works in Vercel demo mode
 
-- Public Amplify X-Change branding and SMSF Property Pathway campaign pages
+- Public Amplify X-Change | Property Pathway campaign pages
 - Landing page education sections for residential and commercial pathways
 - Residential vs commercial comparison and illustrative scenario cards
 - Super vs SMSF Property Scenario Tool using editable local assumptions

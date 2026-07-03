@@ -247,16 +247,18 @@ export default function LandingPage() {
 
         <div className="glass-panel relative z-10 max-w-[800px] w-full mx-auto p-6 sm:p-8 md:p-12 text-center">
           <span className="block uppercase tracking-[0.25em] text-[0.65rem] sm:text-xs font-semibold text-brass-gold mb-3">
-            Amplify X-Change &nbsp;| &nbsp;SMSF Property Pathway
+            Amplify X-Change &nbsp;| &nbsp;Property Pathway
           </span>
           <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.12] mb-5 text-white">
-            Explore whether an SMSF property pathway may be worth discussing
+            Explore whether a property pathway may be worth discussing
           </h1>
           <p className="text-base sm:text-lg md:text-xl font-light text-white/70 mb-8 max-w-[600px] mx-auto leading-relaxed">
-            Amplify X-Change by Amplify Solutions Group is an online‑first
-            enquiry and discovery pathway designed to help Australians
-            understand the general process, risks, costs, and professional
-            support involved in SMSF property investment.
+            Due to our success supporting in-person clients, Amplify X-Change
+            is opening up its property pathway education and discovery process
+            to Australians nationwide — combining local experience with a
+            guided, digital-first experience. The current pathway includes
+            general information about SMSF property considerations and connects
+            users with the right professional support where required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link

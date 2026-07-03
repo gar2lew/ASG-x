@@ -8,7 +8,7 @@ export default function Header() {
           Amplify X-Change
         </Link>
         <span className="text-white/40 text-sm hidden sm:inline">
-          Online SMSF Property Pathway
+          Property Pathway
         </span>
       </div>
       <nav className="flex gap-5">

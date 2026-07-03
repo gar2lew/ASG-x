@@ -1,7 +1,8 @@
 # Amplify X-Change Demo QA Checklist
 
-Manual QA checklist for the Amplify X-Change by Amplify Solutions Group SMSF
-Property Pathway demo.
+Manual QA checklist for the Amplify X-Change | Property Pathway demo by
+Amplify Solutions Group. The current demo includes SMSF-focused property
+education and enquiry flow, while the public campaign naming is broader.
 
 ## Demo Settings
 
@@ -27,7 +28,7 @@ Property Pathway demo.
 ## Landing Page
 
 - [ ] Brand name appears as Amplify X-Change by Amplify Solutions Group.
-- [ ] Campaign positioning appears as SMSF Property Pathway or Online SMSF Property Pathway.
+- [ ] Campaign positioning appears as Amplify X-Change | Property Pathway or Property Pathway.
 - [ ] Landing page uses the premium dark editorial style with brass/gold accents.
 - [ ] Primary CTAs are visible, keyboard accessible, and route correctly.
 - [ ] General information and not-personal-advice wording is visible.
@@ -107,4 +108,3 @@ rg -n "ATO loophole|You qualify|Approved|Guaranteed returns|Use your super now|B
 - [ ] Confirm the build exits successfully.
 - [ ] Record any warnings.
 - [ ] Record any errors.
-

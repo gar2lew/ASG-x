@@ -26,8 +26,8 @@ EZISMSF openly describes itself as a **referral service**, says it sends enquiri
 
 For ASG, I would build this as a **cleaner, more defensible version**:
 
-> **ASG-x: Online SMSF Property Pathway**
-> A digital-first enquiry, education, eligibility and appointment funnel that connects qualified prospects with the correct licensed professionals and ASG property opportunities, without ASG staff accidentally giving SMSF or financial product advice unless properly authorised.
+> **Amplify X-Change | Property Pathway**
+> A digital-first enquiry, education and appointment funnel that connects interested users with the correct licensed professionals and ASG property opportunities, without ASG staff accidentally giving SMSF or financial product advice unless properly authorised.
 
 The biggest caution: SMSF/property is a sensitive regulated area. ASIC says financial product advice requires AFS licence authorisation, and ASIC specifically states that recommending the use of an SMSF as a vehicle to invest in real property is financial product advice. ([ASIC][3]) ([ASIC][4])
 
@@ -225,7 +225,7 @@ My recommendation:
 
 ```text
 Parent internal name: ASG-x
-Campaign/product name: SMSF Property Pathway
+Campaign/product name: Property Pathway
 URL structure: asg-x.com.au/smsf-property or online.asggroup...
 ```
 
@@ -237,7 +237,7 @@ The offer should be framed as an **education + eligibility + introduction pathwa
 
 Recommended public offer:
 
-> **See whether an SMSF property pathway may be worth exploring.**
+> **See whether a property pathway may be worth exploring.**
 > Complete a short online enquiry and book a Zoom discovery session. We’ll help you understand the process, the parties involved, and whether it makes sense to speak with licensed SMSF, lending, and financial advice professionals.
 
 That is much safer than:
@@ -279,7 +279,7 @@ Minimum public site:
 | Page                  | Purpose                          |
 | --------------------- | -------------------------------- |
 | Home / landing page   | Main conversion page             |
-| SMSF Property Pathway | Explain process                  |
+| Property Pathway      | Explain process, including SMSF considerations where relevant |
 | Eligibility Quiz      | Lead capture                     |
 | Book Zoom             | Calendar booking                 |
 | FAQ                   | Objection handling               |

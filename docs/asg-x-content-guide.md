@@ -44,8 +44,8 @@ ASG-x is an online-only SMSF property enquiry funnel designed to help individual
 
 ## Hero Copy Options
 Option 1 (Education-focused):
-Headline: Explore SMSF Property Pathways
-Subheadline: General information only. Learn about the process, risks, and costs involved in using super to invest in property. Speak with licensed professionals about whether this pathway may be worth discussing.
+Headline: Explore Property Pathways
+Subheadline: General information only. Learn about the process, risks, and costs involved in property pathways, including SMSF-related considerations where relevant. Speak with licensed professionals about whether this pathway may be worth discussing.
 
 Option 2 (Discovery-focused):
 Headline: Discover If SMSF Property May Be Worth Exploring
