@@ -1,0 +1,59 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/amplify-xchange-brand-notes.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/amplify-xchange-demo-qa.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-call-script.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-content-guide.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-crm-field-map.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-e2e-manual-test.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-firebase-emulator-plan.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-firebase-emulator-smoke-test.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-go-live-blockers.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-integration-plan.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-partner-handoff-rules.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-phase-5b-functions-plan.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/asg-x-production-readiness-review.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'markdown report.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/calculators/SmsfScenarioCalculator.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/layout/Header.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/quiz/Step1BasicDetails.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/components/quiz/Step2SmsfStatus.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/index.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/lib/firebaseClient.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/lib/firestoreSubmissionAdapter.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/lib/leadPayloadValidation.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/lib/submissionMode.ts', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/FAQPage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/LandingPage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/PrivacyPolicyPage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/pages/ReferralDisclosurePage.tsx', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/types/asgx.ts', LF will be replaced by CRLF the next time Git touches it
+ README.md                                          |  96 [32m+++++[m[31m------[m
+ docs/amplify-xchange-brand-notes.md                |   2 [32m+[m[31m-[m
+ docs/amplify-xchange-demo-qa.md                    |  30 [32m+++[m[31m-[m
+ docs/asg-x-call-script.md                          |   2 [32m+[m[31m-[m
+ docs/asg-x-content-guide.md                        |   2 [32m+[m[31m-[m
+ docs/asg-x-crm-field-map.md                        |  16 [32m+[m[31m-[m
+ docs/asg-x-e2e-manual-test.md                      |  16 [32m+[m[31m-[m
+ docs/asg-x-firebase-emulator-plan.md               |   6 [32m+[m[31m-[m
+ docs/asg-x-firebase-emulator-smoke-test.md         |  22 [32m+[m[31m--[m
+ docs/asg-x-go-live-blockers.md                     |   4 [32m+[m[31m-[m
+ docs/asg-x-integration-plan.md                     |  22 [32m+[m[31m--[m
+ docs/asg-x-partner-handoff-rules.md                |   2 [32m+[m[31m-[m
+ docs/asg-x-phase-5b-functions-plan.md              |   6 [32m+[m[31m-[m
+ docs/asg-x-production-readiness-review.md          |  38 [32m++[m[31m---[m
+ markdown report.md                                 |  54 [32m+++[m[31m---[m
+ .../calculators/SmsfScenarioCalculator.tsx         |  60 [32m++++++[m[31m-[m
+ src/components/layout/Header.tsx                   |  14 [32m+[m[31m-[m
+ src/components/quiz/Step1BasicDetails.tsx          |   6 [32m+[m[31m-[m
+ src/components/quiz/Step2SmsfStatus.tsx            |  14 [32m+[m[31m-[m
+ src/index.css                                      | 189 [32m++++++++++++++++++++[m[31m-[m
+ src/lib/firebaseClient.ts                          |   4 [32m+[m[31m-[m
+ src/lib/firestoreSubmissionAdapter.ts              |   2 [32m+[m[31m-[m
+ src/lib/leadPayloadValidation.ts                   |   2 [32m+[m[31m-[m
+ src/lib/submissionMode.ts                          |   4 [32m+[m[31m-[m
+ src/pages/FAQPage.tsx                              |  14 [32m+[m[31m-[m
+ src/pages/LandingPage.tsx                          | 105 [32m++++++[m[31m------[m
+ src/pages/PrivacyPolicyPage.tsx                    |   2 [32m+[m[31m-[m
+ src/pages/ReferralDisclosurePage.tsx               |   8 [32m+[m[31m-[m
+ src/types/asgx.ts                                  |   2 [32m+[m[31m-[m
+ 29 files changed, 499 insertions(+), 245 deletions(-)

@@ -86,7 +86,7 @@ function CalculatorInput({
   return (
     <label className="block">
       <span className="block text-sm font-semibold text-white/80">{label}</span>
-      <div className="mt-2 flex overflow-hidden rounded-lg border border-white/10 bg-obsidian/70 focus-within:border-brass-gold focus-within:ring-2 focus-within:ring-brass-gold/20">
+      <div className="calculator-input-shell mt-2 flex overflow-hidden rounded-lg border border-white/10 bg-obsidian/70 focus-within:border-brass-gold focus-within:ring-2 focus-within:ring-brass-gold/20">
         {prefix && (
           <span className="flex items-center border-r border-white/10 px-3 text-sm text-white/45">
             {prefix}
@@ -124,6 +124,31 @@ function ResultRow({
       <dt className="text-sm leading-5 text-white/60">{label}</dt>
       <dd
         className={`text-right text-sm font-semibold ${
+          tone === 'accent' ? 'text-brass-gold' : 'text-white'
+        }`}
+      >
+        {value}
+      </dd>
+    </div>
+  )
+}
+
+function ResultMetric({
+  label,
+  value,
+  tone = 'neutral',
+}: {
+  label: string
+  value: string
+  tone?: 'neutral' | 'accent'
+}) {
+  return (
+    <div className="calculator-metric rounded-xl border border-white/10 bg-obsidian/55 p-4">
+      <dt className="text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+        {label}
+      </dt>
+      <dd
+        className={`mt-2 font-display text-2xl font-light ${
           tone === 'accent' ? 'text-brass-gold' : 'text-white'
         }`}
       >
@@ -173,8 +198,8 @@ export default function SmsfScenarioCalculator() {
   }
 
   return (
-    <section className="bg-onyx border-t border-white/5 px-4 py-20 md:py-28">
-      <div className="mx-auto max-w-[1180px]">
+    <section className="section-premium section-premium-onyx border-t border-white/5 px-4 py-20 md:py-28">
+      <div className="relative z-10 mx-auto max-w-[1180px]">
         <div className="mb-12 text-center">
           <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.25em] text-brass-gold">
             Scenario calculator
@@ -192,7 +217,7 @@ export default function SmsfScenarioCalculator() {
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-6">
-            <div className="rounded-2xl border border-brass-gold/20 bg-card-surface p-5 sm:p-6">
+            <div className="calculator-card rounded-2xl border border-brass-gold/20 bg-card-surface p-5 sm:p-6">
               <h3 className="font-display text-2xl font-light text-white">
                 Super fund scenario
               </h3>
@@ -231,7 +256,7 @@ export default function SmsfScenarioCalculator() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-brass-gold/20 bg-card-surface p-5 sm:p-6">
+            <div className="calculator-card rounded-2xl border border-brass-gold/20 bg-card-surface p-5 sm:p-6">
               <h3 className="font-display text-2xl font-light text-white">
                 SMSF property scenario
               </h3>
@@ -303,14 +328,31 @@ export default function SmsfScenarioCalculator() {
             </div>
           </div>
 
-          <aside className="rounded-2xl border border-brass-gold/30 bg-card-surface p-5 shadow-[0_24px_60px_rgba(0,0,0,0.45)] sm:p-6 lg:sticky lg:top-6 lg:self-start">
+          <aside className="calculator-results rounded-2xl border border-brass-gold/30 bg-card-surface p-5 shadow-[0_24px_60px_rgba(0,0,0,0.45)] sm:p-6 lg:sticky lg:top-6 lg:self-start">
             <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.24em] text-brass-gold">
               Illustrative results
             </span>
             <h3 className="font-display text-2xl font-light text-white">
               Based on your assumptions
             </h3>
-            <dl className="mt-5">
+            <dl className="mt-5 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              <ResultMetric
+                label="Super estimate"
+                value={formatCurrency(results.superFundBalance)}
+              />
+              <ResultMetric
+                label="Property equity"
+                value={formatCurrency(results.propertyEquity)}
+                tone="accent"
+              />
+              <ResultMetric
+                label="Scenario difference"
+                value={formatCurrency(results.scenarioDifference)}
+                tone="accent"
+              />
+            </dl>
+
+            <dl className="mt-5 rounded-xl border border-white/10 bg-obsidian/45 px-4">
               <ResultRow
                 label="Estimated super fund balance"
                 value={formatCurrency(results.superFundBalance)}
@@ -351,7 +393,7 @@ export default function SmsfScenarioCalculator() {
               />
             </dl>
 
-            <div className="mt-6 rounded-lg border border-white/10 bg-obsidian/60 p-4 text-xs leading-5 text-white/55">
+            <div className="mt-6 rounded-lg border border-white/10 bg-obsidian/60 p-4 text-xs leading-5 text-white/60">
               <p className="font-semibold text-brass-gold">Assumptions shown</p>
               <p className="mt-2">
                 Super scenario: {numberFormatter.format(values.superYears)} years,
@@ -366,7 +408,7 @@ export default function SmsfScenarioCalculator() {
               </p>
             </div>
 
-            <p className="mt-5 rounded-lg border border-brass-gold/20 bg-brass-gold/10 p-4 text-xs leading-5 text-white/65">
+            <p className="calculator-disclaimer mt-5 rounded-lg border border-brass-gold/30 bg-brass-gold/10 p-4 text-xs leading-5 text-white/75">
               This tool is for illustrative education only. It does not account
               for all tax, fees, insurance, lending, legal, SMSF administration,
               vacancy, depreciation, liquidity, or personal financial

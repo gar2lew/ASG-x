@@ -1,6 +1,6 @@
-# ASG‑x CRM Field Mapping
+# ASG-x CRM Field Mapping
 
-**Status:** Draft — for review before CRM integration begins
+**Status:** Draft  -  for review before CRM integration begins
 
 ## Current local payload fields (`AsgXLeadPayload`)
 
@@ -41,7 +41,7 @@ These are the fields stored locally in `sessionStorage` under `asgXLeadPayload`.
 ### Scoring (internal only)
 | Local field | Type | Notes |
 |-------------|------|-------|
-| `quizScore` | `number` (0–100) | Must not be displayed to user |
+| `quizScore` | `number` (0-100) | Must not be displayed to user |
 | `quizOutcome` | `'explore'` / `'review'` / `'not_now'` | Must not be displayed to user with score context |
 
 ### Consent
@@ -162,16 +162,16 @@ An immutable consent audit log should be maintained separately:
 | Assigned To | Round-robin or auto-assignment queue |
 | Due Date | `createdAt` + 1 business day |
 | Priority | Normal |
-| Subject | `ASG-x Online SMSF Enquiry — {firstName} {lastName}` |
+| Subject | `ASG-x Online SMSF Enquiry  -  {firstName} {lastName}` |
 
 ---
 
 ## Fields that must never be shown publicly
 
-- `quizScore` — internal scoring; no client-facing display
-- `quizOutcome` — internal routing only; the thank-you page shows the soft message, not the outcome label
-- `pipelineStage` — internal CRM status
-- `campaignId` — internal tracking
+- `quizScore`  -  internal scoring; no client-facing display
+- `quizOutcome`  -  internal routing only; the thank-you page shows the soft message, not the outcome label
+- `pipelineStage`  -  internal CRM status
+- `campaignId`  -  internal tracking
 - Any consent audit metadata beyond the fact that consent was recorded
 
 ---

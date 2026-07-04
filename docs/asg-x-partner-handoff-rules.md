@@ -50,7 +50,7 @@ You are receiving this introduction because [Client First Name] has expressed in
 
 **Important Notes:**
 - This introduction is provided solely for the purpose of facilitating a potential initial conversation.
-- ASG-x provides general information and education services only—we do not provide personal financial advice.
+- ASG-x provides general information and education services only - we do not provide personal financial advice.
 - The client has been informed that any discussion of SMSF property strategies should be undertaken with a licensed professional who considers their individual circumstances.
 - ASG-x may receive a referral fee from you if a professional engagement results from this referral, but this does not affect the cost to the client.
 - Please refer to our full referral disclosure at [link to referral disclosure] for complete details.

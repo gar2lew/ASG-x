@@ -18,7 +18,7 @@ interface FirestoreSubmissionResult extends AsgXSubmissionStatus {
 
 /**
  * Prepares a document shape suitable for the asgXLeadSubmissions collection.
- * Does not mutate — returns a plain object.
+ * Does not mutate  -  returns a plain object.
  */
 function prepareFirestoreDocument(payload: AsgXLeadPayload) {
   return {

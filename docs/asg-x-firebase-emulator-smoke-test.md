@@ -1,6 +1,6 @@
-# ASG‑x Firebase Emulator Smoke Test
+# ASG-x Firebase Emulator Smoke Test
 
-**Status:** Phase 4C — tested  
+**Status:** Phase 4C  -  tested  
 **Environment:** Local development only
 
 ## Prerequisites
@@ -93,11 +93,11 @@ Expected:
 Navigate to `/debug`.
 
 Expected sections:
-- `asgXLeadPayload` — contains the full lead payload
-- `asgXLeadPayloadValidation` — `valid: true`, no errors
-- `asgXQuizOutcome` — `explore`, `review`, or `not_now`
-- `asgXQuizSubmission` — raw quiz data
-- `asgXFirestoreResult` — Firestore write result (should include `firestoreDocId`)
+- `asgXLeadPayload`  -  contains the full lead payload
+- `asgXLeadPayloadValidation`  -  `valid: true`, no errors
+- `asgXQuizOutcome`  -  `explore`, `review`, or `not_now`
+- `asgXQuizSubmission`  -  raw quiz data
+- `asgXFirestoreResult`  -  Firestore write result (should include `firestoreDocId`)
 
 ### 8. Verify Firestore emulator
 
@@ -114,9 +114,9 @@ Expected:
 
 ### 9. Clear session storage
 
-On the Debug page, click **"Clear all ASG‑x data"**.
+On the Debug page, click **"Clear all ASG-x data"**.
 
-Refresh the page. Expected: "No ASG‑x session data found."
+Refresh the page. Expected: "No ASG-x session data found."
 
 ### 10. Verify console logs
 
@@ -183,7 +183,7 @@ Mark each item after completing the smoke test:
 - [ ] Firestore document includes: `sourceKey`, `sourceLabel`, `emulatorOnly: true`, `submissionMode: "firebase"`
 - [ ] UTM capture works (test with `/quiz?utm_source=test&...`)
 - [ ] Console shows `[firebaseClient] Connected to Firestore emulator (localhost:8080).`
-- [ ] Debug "Clear all ASG‑x data" removes all keys
+- [ ] Debug "Clear all ASG-x data" removes all keys
 - [ ] `npm run build` passes with zero errors and warnings
 
 ## Phase 4C results
@@ -205,4 +205,4 @@ Mark each item after completing the smoke test:
 - Emulator must be started manually in a separate terminal (`npm run emulators`)
 - Emulator UI at `http://127.0.0.1:4000` shown above
 - Vite dev server at `http://localhost:5173` (default)
-- Firestore doc ID is visible in `asgXFirestoreResult` on debug page — remove `/debug` before production
+- Firestore doc ID is visible in `asgXFirestoreResult` on debug page  -  remove `/debug` before production

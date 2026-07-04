@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
             <ul className="list-disc list-inside space-y-1">
               <li>
                 Licensed professional partners (financial advisers, SMSF
-                specialists, finance brokers) — only with your explicit consent
+                specialists, finance brokers)  -  only with your explicit consent
               </li>
               <li>
                 Service providers who assist us in operating our website and

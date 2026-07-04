@@ -87,7 +87,7 @@ export function validateLeadPayload(payload: AsgXLeadPayload): ValidationResult 
 
   // ---- Internal score ----
   if (typeof payload.quizScore !== 'number' || payload.quizScore < 0 || payload.quizScore > 100) {
-    warnings.push('quizScore is missing or out of range (0–100). Internal scoring may be incomplete.')
+    warnings.push('quizScore is missing or out of range (0-100). Internal scoring may be incomplete.')
   }
 
   if (payload.quizScore !== undefined && payload.quizOutcome !== undefined) {

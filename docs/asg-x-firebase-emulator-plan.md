@@ -1,6 +1,6 @@
-# ASG‑x Firebase Emulator Plan
+# ASG-x Firebase Emulator Plan
 
-**Status:** Phase 4A — scaffolded, not connected
+**Status:** Phase 4A  -  scaffolded, not connected
 
 ## Goal
 
@@ -125,7 +125,7 @@ These must be resolved before switching to production:
 If production Firestore write fails:
 
 1. Set `VITE_ASGX_SUBMISSION_MODE=mock`
-2. Deploy — all submissions revert to local sessionStorage
+2. Deploy  -  all submissions revert to local sessionStorage
 3. Investigate failure in staging
 4. Fix and redeploy with `firebase` mode
 

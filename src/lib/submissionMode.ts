@@ -1,8 +1,8 @@
 /**
- * Submission mode selector for the ASG‑x lead pipeline.
+ * Submission mode selector for the ASG-x lead pipeline.
  *
  * Reads VITE_ASGX_SUBMISSION_MODE from Vite env vars.
- * Default: "mock" — all submissions stay in sessionStorage.
+ * Default: "mock"  -  all submissions stay in sessionStorage.
  */
 export type SubmissionMode = 'mock' | 'firebase'
 

@@ -1,7 +1,7 @@
 /**
  * Firebase client scaffold.
  * Reads config from Vite env vars. Supports emulator mode.
- * Fails safely if config is missing — returns null instead of crashing.
+ * Fails safely if config is missing  -  returns null instead of crashing.
  *
  * Emulator only at this stage. Do NOT connect to production Firebase.
  */
@@ -67,7 +67,7 @@ async function initFirebase() {
   }
 }
 
-// Eager-init promise — resolves when Firebase is ready (or null)
+// Eager-init promise  -  resolves when Firebase is ready (or null)
 let _initPromise: Promise<void> | null = null
 
 function ensureInit(): Promise<void> {

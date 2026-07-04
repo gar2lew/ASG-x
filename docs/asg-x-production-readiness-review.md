@@ -1,11 +1,11 @@
-# ASG‑x Production Readiness Review
+# ASG-x Production Readiness Review
 
-**Status:** Phase 5A — planning and documentation  
+**Status:** Phase 5A  -  planning and documentation  
 **Date:** June 2026
 
 ## Current prototype status
 
-The ASG‑x prototype delivers:
+The ASG-x prototype delivers:
 
 - Premium dark-editorial landing page
 - Functional 4-step quiz with inline validation and consent capture
@@ -37,15 +37,15 @@ This list represents the gap between the current prototype and a production depl
 ### Production blockers
 
 1. **Firestore rules are dev-only** (`firestore.rules` allows `if true` for `asgXLeadSubmissions`)
-2. **Direct client-side Firestore writes** — no server-side validation or rate limiting
-3. **No authentication or App Check** — public Firestore write endpoint is open
-4. **`/debug` route is publicly accessible** — exposes all lead payloads and internal scores
-5. **No spam/abuse protection** — quiz can be submitted repeatedly
-6. **No server-side submission endpoint** — client trusts the client
-7. **No CRM integration** — leads stay in Firestore only
-8. **No production Firebase project configured** — emulator-only values in `.env.local.example`
-9. **No automated follow-up** — no SMS, email, or task creation
-10. **No data retention policy** — when and how are leads deleted or archived?
+2. **Direct client-side Firestore writes**  -  no server-side validation or rate limiting
+3. **No authentication or App Check**  -  public Firestore write endpoint is open
+4. **`/debug` route is publicly accessible**  -  exposes all lead payloads and internal scores
+5. **No spam/abuse protection**  -  quiz can be submitted repeatedly
+6. **No server-side submission endpoint**  -  client trusts the client
+7. **No CRM integration**  -  leads stay in Firestore only
+8. **No production Firebase project configured**  -  emulator-only values in `.env.local.example`
+9. **No automated follow-up**  -  no SMS, email, or task creation
+10. **No data retention policy**  -  when and how are leads deleted or archived?
 
 ### Security concerns
 
@@ -53,12 +53,12 @@ This list represents the gap between the current prototype and a production depl
 - `import.meta.env.VITE_*` values are bundled into the client and visible in browser DevTools.
 - Firestore API key is exposed in the client bundle even with restricted rules.
 - `/debug` exposes all session storage including internal quiz scores.
-- Session storage persists across tab navigation but is cleared on tab close — potential data loss if the user closes the tab before the Firestore write completes.
+- Session storage persists across tab navigation but is cleared on tab close  -  potential data loss if the user closes the tab before the Firestore write completes.
 
 ### Privacy / data retention concerns
 
 - Personal information (name, mobile, email) is stored in sessionStorage and Firestore
-- No data retention policy defined — how long are leads kept? Who can delete them?
+- No data retention policy defined  -  how long are leads kept? Who can delete them?
 - Consent audit trail exists as a document field but is not in an append-only log
 - Consent withdrawal is not implemented
 - No GDPR/Privacy Act compliance review has been performed
@@ -80,7 +80,7 @@ This list represents the gap between the current prototype and a production depl
 
 ## Recommended production architecture
 
-### Option A — Direct Firestore client write (current path)
+### Option A  -  Direct Firestore client write (current path)
 
 **Pros:** Simple, fast to build, already partially working in emulator.
 
@@ -93,7 +93,7 @@ This list represents the gap between the current prototype and a production depl
 
 **Verdict:** Not recommended for final public launch unless App Check is enabled, security rules are battle-tested, and rate limiting is implemented externally.
 
-### Option B — Firebase Functions server-side submission endpoint (recommended)
+### Option B  -  Firebase Functions server-side submission endpoint (recommended)
 
 **Pros:**
 - Server-side validation (unspoofable)
@@ -107,9 +107,9 @@ This list represents the gap between the current prototype and a production depl
 - More build work (Functions scaffold, deploy, test)
 - Adds a cold-start dependency (Functions need warm-up)
 
-**Verdict:** Recommended for ASG‑x production. Build a single `submitLead` HTTPS callable Function.
+**Verdict:** Recommended for ASG-x production. Build a single `submitLead` HTTPS callable Function.
 
-### Option C — External backend / API
+### Option C  -  External backend / API
 
 **Pros:** Maximum flexibility, decoupled from Firebase.
 
@@ -120,7 +120,7 @@ This list represents the gap between the current prototype and a production depl
 ## Minimum go-live checklist
 
 - [ ] Production Firebase project selected and configured
-- [ ] `firestore.rules` hardened — deny all client writes, allow only Function writes
+- [ ] `firestore.rules` hardened  -  deny all client writes, allow only Function writes
 - [ ] Firebase App Check enabled for the quiz domain
 - [ ] Server-side submission Function implemented and tested
 - [ ] Rate limiting on the Function (per IP, per session)

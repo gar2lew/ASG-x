@@ -95,6 +95,101 @@
   margin-bottom: 0.75rem;
 }
 
+/* === Premium section rhythm === */
+.section-premium {
+  position: relative;
+  overflow: hidden;
+}
+.section-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(181, 166, 66, 0.1), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(57, 87, 139, 0.13), transparent 34%);
+  pointer-events: none;
+}
+.section-premium::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(1100px, 88vw);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(181, 166, 66, 0.5), transparent);
+  pointer-events: none;
+}
+.section-premium-onyx::before {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(181, 166, 66, 0.12), transparent 30%),
+    radial-gradient(circle at 14% 24%, rgba(57, 87, 139, 0.15), transparent 38%);
+}
+.section-card,
+.calculator-card,
+.comparison-panel,
+.support-panel,
+.calculator-results {
+  background:
+    linear-gradient(145deg, rgba(26, 26, 26, 0.96), rgba(8, 11, 16, 0.92)),
+    radial-gradient(circle at 50% 0%, rgba(181, 166, 66, 0.1), transparent 58%);
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.035) inset;
+}
+.section-card {
+  border-color: rgba(181, 166, 66, 0.24);
+}
+.scenario-card {
+  min-height: 100%;
+}
+.comparison-panel {
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.52),
+    0 0 65px rgba(181, 166, 66, 0.07);
+}
+.comparison-row:nth-child(even) {
+  background: rgba(255, 255, 255, 0.018);
+}
+.support-panel {
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.5);
+}
+.support-role {
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+.support-role:hover {
+  border-color: rgba(181, 166, 66, 0.4);
+  background: rgba(10, 10, 10, 0.78);
+  transform: translateY(-2px);
+}
+.premium-cta-frame {
+  max-width: 960px;
+  background:
+    linear-gradient(145deg, rgba(18, 24, 34, 0.94), rgba(5, 7, 10, 0.92)),
+    radial-gradient(circle at 50% 0%, rgba(181, 166, 66, 0.16), transparent 58%);
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.68),
+    0 0 80px rgba(181, 166, 66, 0.12);
+}
+
+/* === Calculator polish === */
+.calculator-card,
+.calculator-results {
+  border-color: rgba(181, 166, 66, 0.24);
+}
+.calculator-input-shell {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.calculator-input-shell:focus-within {
+  background: rgba(10, 10, 10, 0.86);
+}
+.calculator-metric {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+.calculator-disclaimer {
+  box-shadow: 0 0 35px rgba(181, 166, 66, 0.08) inset;
+}
+
 /* === CTA frame with brass border === */
 .cta-frame {
   max-width: 900px;
@@ -146,6 +241,58 @@
   background: rgba(181, 166, 66, 0.2);
 }
 
+/* === Brand lockup === */
+.brand-header {
+  position: relative;
+}
+.brand-header::after {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(181, 166, 66, 0.72), rgba(212, 197, 106, 0.08), transparent 74%);
+  pointer-events: none;
+}
+.brand-lockup-link {
+  padding-block: 0.15rem;
+  filter: drop-shadow(0 0 20px rgba(181, 166, 66, 0.13));
+}
+.brand-lockup-link:hover {
+  filter: drop-shadow(0 0 28px rgba(181, 166, 66, 0.24));
+}
+
+/* === Hero lighting and texture === */
+.hero-stage {
+  isolation: isolate;
+}
+.hero-texture {
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.026) 1px, transparent 1px),
+    radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.12), transparent 38%);
+  background-size: 50px 50px, 50px 50px, auto;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.48));
+  opacity: 0.48;
+}
+.hero-brass-glow {
+  background:
+    radial-gradient(circle, rgba(243, 221, 168, 0.24) 0%, rgba(212, 197, 106, 0.2) 22%, rgba(181, 166, 66, 0.1) 42%, transparent 70%);
+  filter: blur(8px);
+}
+.hero-navy-glow {
+  background: radial-gradient(circle, rgba(57, 87, 139, 0.35), transparent 68%);
+  filter: blur(10px);
+}
+.hero-bottom-light {
+  background: radial-gradient(ellipse, rgba(181, 166, 66, 0.21), transparent 64%);
+  filter: blur(18px);
+}
+.hero-watermark {
+  filter: drop-shadow(0 0 55px rgba(181, 166, 66, 0.3));
+}
+
 /* === Glass morphism overlay === */
 .glass-panel {
   background: rgba(10, 10, 10, 0.7);
@@ -154,6 +301,36 @@
   border: 1px solid rgba(181, 166, 66, 0.2);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+.hero-panel {
+  background:
+    linear-gradient(145deg, rgba(19, 27, 40, 0.94), rgba(4, 6, 9, 0.92)),
+    radial-gradient(circle at 50% 0%, rgba(212, 197, 106, 0.18), transparent 58%);
+  border-color: rgba(243, 221, 168, 0.52);
+  box-shadow:
+    0 38px 100px rgba(0, 0, 0, 0.78),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 96px rgba(181, 166, 66, 0.18);
+}
+.hero-panel::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(181, 166, 66, 0.24);
+  border-radius: 14px;
+  pointer-events: none;
+}
+.hero-primary-cta,
+.hero-secondary-cta {
+  min-height: 58px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+}
+.hero-primary-cta {
+  background-image: linear-gradient(135deg, #d4c56a 0%, #b5a642 50%, #f3dda8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+.hero-secondary-cta {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(181, 166, 66, 0.08) inset;
 }
 
 /* === Service image card (placeholder) === */
@@ -206,13 +383,15 @@
 
 /* === Trust badge === */
 .trust-badge {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(181, 166, 66, 0.08));
+  border: 1px solid rgba(212, 197, 106, 0.46);
   border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: rgba(252, 252, 252, 0.85);
+  padding: 0.68rem 1.05rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 252, 238, 0.94);
   backdrop-filter: blur(4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3), 0 0 24px rgba(181, 166, 66, 0.08) inset;
 }
 
 /* === Brass accent line === */

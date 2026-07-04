@@ -33,7 +33,7 @@
 "If, based on our conversation, you'd like to explore speaking with a licensed professional about SMSF property strategies, and you provide your explicit consent, I can share your contact details with [type of professional, e.g., a financial adviser who specializes in SMSF strategies]. Would you be willing to provide consent for me to share your information for this purpose?"
 
 ## Closing Script
-"Thank you for your time today. To recap, we've discussed the general process and considerations around SMSF property investment. Remember, I've provided general information only—any decisions about your superannuation should be made after consulting with licensed professionals who consider your individual circumstances.
+"Thank you for your time today. To recap, we've discussed the general process and considerations around SMSF property investment. Remember, I've provided general information only - any decisions about your superannuation should be made after consulting with licensed professionals who consider your individual circumstances.
 
 If you'd like to proceed with a referral to a licensed professional, I'll need your explicit consent to share your information. Otherwise, you're welcome to reach out again if you have more general questions.
 

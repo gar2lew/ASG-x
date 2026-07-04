@@ -46,17 +46,17 @@ export default function ReferralDisclosurePage() {
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li>
-                <strong>Licensed Financial Advisers</strong> — who can provide
+                <strong>Licensed Financial Advisers</strong>  -  who can provide
                 personal financial advice about whether an SMSF property
                 strategy is appropriate for your circumstances
               </li>
               <li>
-                <strong>SMSF Specialists</strong> — who can assist with SMSF
+                <strong>SMSF Specialists</strong>  -  who can assist with SMSF
                 establishment, compliance, administration, and ongoing
                 management
               </li>
               <li>
-                <strong>Finance Brokers</strong> — who can assist with
+                <strong>Finance Brokers</strong>  -  who can assist with
                 arranging limited recourse borrowing arrangements and other
                 finance options
               </li>
@@ -84,7 +84,7 @@ export default function ReferralDisclosurePage() {
               Any referral fee paid to Amplify X-Change by our partners does not increase
               the cost of services to you. Professional partners set their own
               fees independently, and the referral fee is paid from the
-              partner's commercial arrangements — not added to your invoice.
+              partner's commercial arrangements  -  not added to your invoice.
             </p>
           </section>
 

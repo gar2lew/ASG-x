@@ -1,11 +1,11 @@
-# ASG‑x Go-Live Blocker Checklist
+# ASG-x Go-Live Blocker Checklist
 
 **Status:** Phase 5A  
 **Purpose:** Track blockers that must be resolved before production Firebase rollout
 
 ## Critical blockers (must resolve)
 
-- [ ] **Production security rules not finalised.** Current `firestore.rules` uses `allow read, write: if true` — development only.
+- [ ] **Production security rules not finalised.** Current `firestore.rules` uses `allow read, write: if true`  -  development only.
 - [ ] **Server-side submission endpoint not implemented.** Client-side writes are vulnerable to spoofing and abuse.
 - [ ] **Spam / rate limiting not implemented.** Quiz can be submitted unlimited times with no bot protection.
 - [ ] **Firebase App Check not reviewed.** No protection against non-browser Firestore access.

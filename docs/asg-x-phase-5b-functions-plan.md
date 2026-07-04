@@ -1,6 +1,6 @@
-# ASG‑x Phase 5B — Firebase Functions Plan
+# ASG-x Phase 5B  -  Firebase Functions Plan
 
-**Status:** Phase 5A — documented, not implemented  
+**Status:** Phase 5A  -  documented, not implemented  
 **Purpose:** Outline the future server-side submission architecture
 
 ## Overview
@@ -63,7 +63,7 @@ Duplicate the client-side `validateLeadPayload()` logic on the server. Do NOT tr
 ### Audit log
 
 - Write a separate document to `consentAuditLog/{submissionId}`
-- Immutable — no updates after creation
+- Immutable  -  no updates after creation
 - Contains: consent version, consent time, consent flags, function version
 
 ### Response

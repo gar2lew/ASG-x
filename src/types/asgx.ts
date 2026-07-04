@@ -1,5 +1,5 @@
 /**
- * ASG‑x typed data model for quiz submissions.
+ * ASG-x typed data model for quiz submissions.
  * Future-ready for CRM, Firebase, and partner integrations.
  */
 

@@ -10,7 +10,7 @@ That matters because this is not just “build a landing page.” It is a **regu
 
 # Executive summary
 
-Yes — ASG could build an **online-only SMSF/property lead generation arm**, branded separately as something like **ASG-x**, but it should **not simply copy EZISMSF’s wording or compliance posture**.
+Yes  -  ASG could build an **online-only SMSF/property lead generation arm**, branded separately as something like **ASG-x**, but it should **not simply copy EZISMSF’s wording or compliance posture**.
 
 The model appears to be:
 
@@ -31,7 +31,7 @@ For ASG, I would build this as a **cleaner, more defensible version**:
 
 The biggest caution: SMSF/property is a sensitive regulated area. ASIC says financial product advice requires AFS licence authorisation, and ASIC specifically states that recommending the use of an SMSF as a vehicle to invest in real property is financial product advice. ([ASIC][3]) ([ASIC][4])
 
-So the opportunity is real — but the build must have **guardrails baked into the website, CRM, scripts, disclaimers, staff process, and partner handoff.**
+So the opportunity is real  -  but the build must have **guardrails baked into the website, CRM, scripts, disclaimers, staff process, and partner handoff.**
 
 ---
 
@@ -61,7 +61,7 @@ The issue is that “ATO loophole” language is aggressive. It may convert, but
 
 A stronger ASG-x version would be:
 
-> “Explore whether an SMSF property strategy may be suitable for you — with help from licensed professionals.”
+> “Explore whether an SMSF property strategy may be suitable for you  -  with help from licensed professionals.”
 
 Less clickbait, more trustworthy, less regulatory heat.
 
@@ -103,7 +103,7 @@ CRM pipeline and follow-up automation
 
 The partner page confirms they focus on **high-intent lead generation**, manual quality checking, real-time delivery, CRM/email/SMS routing, geo-targeting, and exclusive leads. ([ezismsf.com][2])
 
-That is the part ASG should replicate — not the exact copywriting.
+That is the part ASG should replicate  -  not the exact copywriting.
 
 ---
 
@@ -196,7 +196,7 @@ ASG-x should be more polished:
 - unsubscribe mechanism for marketing
 - CRM audit log of consent version accepted
 
-This is important because if ASG-x grows, the compliance issue will not just be what was said verbally — it will be what the website, forms, SMS messages, emails, and CRM notes prove happened.
+This is important because if ASG-x grows, the compliance issue will not just be what was said verbally  -  it will be what the website, forms, SMS messages, emails, and CRM notes prove happened.
 
 ---
 
@@ -296,7 +296,7 @@ Minimum public site:
 Recommended page structure:
 
 1. Hero section
-   “Explore property investment through your SMSF — online, guided, and with the right professionals.”
+   “Explore property investment through your SMSF  -  online, guided, and with the right professionals.”
 
 2. Trust bar
    “Online appointments. Guided process. Partnered professionals. No obligation enquiry.”
@@ -327,7 +327,7 @@ Recommended page structure:
 
 Build the quiz as a multi-step form:
 
-### Step 1 — Basic details
+### Step 1  -  Basic details
 
 - First name
 - Last name
@@ -336,7 +336,7 @@ Build the quiz as a multi-step form:
 - State
 - Best contact time
 
-### Step 2 — SMSF status
+### Step 2  -  SMSF status
 
 - Do you already have an SMSF?
 - Approximate super balance
@@ -344,14 +344,14 @@ Build the quiz as a multi-step form:
 - Age range
 - Employment status
 
-### Step 3 — Property intent
+### Step 3  -  Property intent
 
 - Residential / commercial / not sure
 - Preferred state/area
 - Timeframe
 - Are you currently speaking with an adviser/accountant/broker?
 
-### Step 4 — Consent and risk acknowledgement
+### Step 4  -  Consent and risk acknowledgement
 
 - I understand this is general information only
 - I understand ASG-x does not provide personal financial advice unless provided by an appropriately licensed representative
@@ -377,7 +377,7 @@ Suggested scoring:
 | Factor                | Higher score                         |
 | --------------------- | ------------------------------------ |
 | Super balance         | $200k+ individual or $300k+ combined |
-| Timeframe             | 0–6 months                           |
+| Timeframe             | 0-6 months                           |
 | Age                   | Enough investment horizon            |
 | Intent                | Clear property investment interest   |
 | Existing SMSF/adviser | Can accelerate pathway               |
@@ -506,8 +506,8 @@ Partner/adviser/broker handoff if appropriate
 
 | Meeting               |           Duration | Purpose                                      |
 | --------------------- | -----------------: | -------------------------------------------- |
-| SMSF Discovery Call   |          20–30 min | Understand situation and explain pathway     |
-| Property Pathway Call |          30–45 min | Discuss property goals and available options |
+| SMSF Discovery Call   |          20-30 min | Understand situation and explain pathway     |
+| Property Pathway Call |          30-45 min | Discuss property goals and available options |
 | Partner Advice Call   | Partner controlled | Licensed advice/accounting/lending           |
 | Follow-up Call        |             15 min | Keep momentum                                |
 
@@ -519,7 +519,7 @@ Partner/adviser/broker handoff if appropriate
 
 Given your ASG CRM is React/Firebase, I would build ASG-x as either:
 
-### Option A — inside existing ASG CRM repo
+### Option A  -  inside existing ASG CRM repo
 
 Best for speed.
 
@@ -542,7 +542,7 @@ Cons:
 - public marketing site mixed with internal app
 - more care needed around routing/security
 
-### Option B — separate ASG-x web app
+### Option B  -  separate ASG-x web app
 
 Best for brand and long-term cleanliness.
 
@@ -688,7 +688,7 @@ Launch a compliant online lead funnel that captures ASG-x SMSF/property enquirie
 
 # 10. Build phases
 
-## Phase 1 — Strategy and compliance pack
+## Phase 1  -  Strategy and compliance pack
 
 Deliverables:
 
@@ -709,7 +709,7 @@ ASG-x Compliance & Funnel Blueprint
 
 ---
 
-## Phase 2 — Landing page and quiz
+## Phase 2  -  Landing page and quiz
 
 Deliverables:
 
@@ -729,7 +729,7 @@ Live ASG-x MVP funnel
 
 ---
 
-## Phase 3 — CRM integration
+## Phase 3  -  CRM integration
 
 Deliverables:
 
@@ -749,7 +749,7 @@ ASG-x leads flowing into CRM
 
 ---
 
-## Phase 4 — Booking and follow-up
+## Phase 4  -  Booking and follow-up
 
 Deliverables:
 
@@ -768,7 +768,7 @@ Online lead-to-Zoom workflow
 
 ---
 
-## Phase 5 — Partner/referral workflow
+## Phase 5  -  Partner/referral workflow
 
 Deliverables:
 
@@ -787,7 +787,7 @@ Controlled partner handoff system
 
 ---
 
-## Phase 6 — Scale
+## Phase 6  -  Scale
 
 Deliverables:
 
@@ -829,7 +829,7 @@ My honest recommendation:
 
 # 12. Prompts to use
 
-## Prompt 1 — DeepSeek competitor and compliance audit
+## Prompt 1  -  DeepSeek competitor and compliance audit
 
 ```text
 Act as a senior Australian fintech compliance analyst, digital acquisition strategist, SMSF workflow consultant, and product strategist.
@@ -857,7 +857,7 @@ Output:
 
 ---
 
-## Prompt 2 — Antigravity product blueprint
+## Prompt 2  -  Antigravity product blueprint
 
 ```text
 Act as a senior product manager, UX architect, conversion copywriter, and compliance-aware digital funnel designer.
@@ -893,7 +893,7 @@ Use ASG-style branding:
 
 ---
 
-## Prompt 3 — Codex implementation plan
+## Prompt 3  -  Codex implementation plan
 
 ```text
 Act as a senior full-stack React/Firebase engineer working inside the ASG CRM ecosystem.
@@ -943,7 +943,7 @@ Before coding:
 
 ---
 
-## Prompt 4 — Codex CRM integration
+## Prompt 4  -  Codex CRM integration
 
 ```text
 Act as a senior CRM engineer and Firebase architect.
@@ -973,7 +973,7 @@ Deliverables:
 
 ---
 
-## Prompt 5 — DeepSeek launch audit
+## Prompt 5  -  DeepSeek launch audit
 
 ```text
 Act as a senior QA engineer, Australian financial-services compliance reviewer, privacy reviewer, and launch-readiness auditor.
@@ -1141,7 +1141,7 @@ I would move forward in this order:
 5. **DeepSeek launch audit** using Prompt 5
 6. Fix, test, then launch quietly with limited traffic first
 
-This could become a very strong online acquisition channel for ASG — but only if it is built like a regulated funnel, not just a flashy lead page.
+This could become a very strong online acquisition channel for ASG  -  but only if it is built like a regulated funnel, not just a flashy lead page.
 
 [1]: https://www.ezismsf.com/ "EZI SMSF"
 [2]: https://www.ezismsf.com/become-a-partner "www.ezismsf.com"

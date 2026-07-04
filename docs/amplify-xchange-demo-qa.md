@@ -6,7 +6,7 @@ education and enquiry flow, while the public campaign naming is broader.
 
 ## Demo Settings
 
-- [ ] Confirm Vercel preview/demo env values are:
+- [ ] Vercel env values are confirmed for preview/demo mode:
   - `VITE_ASGX_SUBMISSION_MODE=mock`
   - `VITE_ASGX_DEMO_MODE=true`
   - `VITE_ASGX_ENABLE_DEBUG=false`
@@ -28,8 +28,12 @@ education and enquiry flow, while the public campaign naming is broader.
 ## Landing Page
 
 - [ ] Brand name appears as Amplify X-Change by Amplify Solutions Group.
-- [ ] Campaign positioning appears as Amplify X-Change | Property Pathway or Property Pathway.
+- [ ] Property Pathway naming appears as Amplify X-Change | Property Pathway or Property Pathway.
 - [ ] Landing page uses the premium dark editorial style with brass/gold accents.
+- [ ] Hero visual impact is strong in the first fold: larger header logo, dark navy/black background, brass/gold glow, premium hero card, clear CTAs, and trust/value badges.
+- [ ] Header logo renders from `/brand/amplify-xchange-wordmark.svg` with alt text `Amplify X-Change by Amplify Solutions Group`.
+- [ ] Footer wordmark renders and footer AX mark loads.
+- [ ] Favicon loads from `/brand/ax-icon.svg` and the browser console does not show a missing `/favicon.ico` error on a fresh page load.
 - [ ] Primary CTAs are visible, keyboard accessible, and route correctly.
 - [ ] General information and not-personal-advice wording is visible.
 
@@ -48,6 +52,7 @@ education and enquiry flow, while the public campaign naming is broader.
 - [ ] Editing inputs updates outputs without external calls.
 - [ ] Results are labelled estimated, illustrative, or based on assumptions.
 - [ ] Disclaimer is visible near the calculator.
+- [ ] Calculator mobile check confirms result cards and inputs stack cleanly without horizontal overflow.
 - [ ] Calculator data is not stored externally.
 
 ## Quiz
@@ -79,7 +84,7 @@ education and enquiry flow, while the public campaign naming is broader.
 
 ## Debug Disabled
 
-- [ ] With `VITE_ASGX_ENABLE_DEBUG=false`, `/debug` shows the disabled message.
+- [ ] Debug disabled check confirms `/debug` shows the disabled message when `VITE_ASGX_ENABLE_DEBUG=false`.
 - [ ] Debug route is not linked from public-facing pages.
 - [ ] Debug data is not visible in demo mode unless explicitly enabled for local QA.
 
@@ -93,6 +98,17 @@ education and enquiry flow, while the public campaign naming is broader.
 
 ## Compliance Wording
 
+- [ ] Confirm public campaign naming uses `Amplify X-Change | Property Pathway` or `Property Pathway`, not `SMSF Property Pathway`.
+- [ ] Search the project for em dashes and en dashes:
+
+```powershell
+$em = [char]8212
+$en = [char]8211
+rg -n "$em|$en" --glob '!node_modules/**' --glob '!dist/**' --glob '!package-lock.json'
+```
+
+- [ ] Confirm no em dashes remain in source, docs, README, comments, or brand notes unless unavoidable.
+- [ ] Confirm no en dashes remain in source, docs, README, comments, or brand notes unless unavoidable.
 - [ ] Search `src/` for the prohibited public-facing phrases before demo handoff:
 
 ```powershell
@@ -100,7 +116,15 @@ rg -n "ATO loophole|You qualify|Approved|Guaranteed returns|Use your super now|B
 ```
 
 - [ ] Confirm any matches are replaced with safer wording such as "General information only", "May be worth discussing", "Illustrative only", "Scenario only", "Based on assumptions", "Speak with licensed or appropriately qualified professionals", or "Not personal financial advice".
+- [ ] Search `src/` for `SMSF Property Pathway` and confirm there are no public campaign-name matches.
 - [ ] Confirm calculator copy does not imply advice, suitability, approval, or guaranteed outcomes.
+
+## Brand Assets
+
+- [ ] `/brand/ax-icon.svg` returns a successful response.
+- [ ] `/brand/ax-mark.svg` returns a successful response.
+- [ ] `/brand/amplify-xchange-wordmark.svg` returns a successful response.
+- [ ] Header and footer logo images render with non-zero natural dimensions.
 
 ## Build
 

@@ -1,6 +1,6 @@
-# ASG‑x Integration Plan
+# ASG-x Integration Plan
 
-**Status:** Phase 3B — pre-integration readiness
+**Status:** Phase 3B  -  pre-integration readiness
 
 ## Current state
 
@@ -16,21 +16,21 @@ No external APIs are called. No CRM, Firebase, SMS, or booking integration exist
 
 ## Recommended adapter stages
 
-### Stage 1 — Mock adapter (current)
+### Stage 1  -  Mock adapter (current)
 - Builds payload in memory
 - Validates payload locally
 - Saves to `sessionStorage`
 - Returns a local status result
 - Use for: development, QA, demo, compliance review
 
-### Stage 2 — Firebase emulator / local test adapter
+### Stage 2  -  Firebase emulator / local test adapter
 - Same as Stage 1, plus:
   - Writes payload to Firebase emulator Firestore
   - Reads back the document ID
   - Returns the Firestore document ID in the status
 - Use for: integration testing, QA before production connection
 
-### Stage 3 — Firestore production adapter
+### Stage 3  -  Firestore production adapter
 - Same as Stage 2, plus:
   - Writes to production Firestore
   - Implements server-side validation (security rules)
@@ -38,7 +38,7 @@ No external APIs are called. No CRM, Firebase, SMS, or booking integration exist
   - Implements retry logic
 - Use for: production data capture before CRM sync
 
-### Stage 4 — CRM lead creation adapter
+### Stage 4  -  CRM lead creation adapter
 - Same as Stage 3, plus:
   - Creates a lead in the CRM via REST API
   - Maps Firestore fields to CRM fields
@@ -46,13 +46,13 @@ No external APIs are called. No CRM, Firebase, SMS, or booking integration exist
   - Tracks CRM sync status (`pending` / `synced` / `failed`)
 - Use for: production CRM integration
 
-### Stage 5 — SMS / email automation
+### Stage 5  -  SMS / email automation
 - Sends a confirmation SMS/email after successful submission
 - Sends follow-up reminders
 - Requires consent verification before sending
 - Use for: production communication workflows
 
-### Stage 6 — Booking integration
+### Stage 6  -  Booking integration
 - Wires "Book a discovery call" to a calendar provider
 - Candidates: Calendly, HubSpot Meetings, custom
 - Updates pipeline stage when a booking is created
@@ -87,7 +87,7 @@ dispatch to the appropriate adapter. Default to `mock` if not set.
   in browser DevTools. Do not store secrets (API keys, tokens) in VITE_ vars.
 - Firestore security rules must validate lead payload structure server-side
 - Consent data must be immutable once recorded
-- Session storage is per-tab and cleared on tab close — suitable for prototype
+- Session storage is per-tab and cleared on tab close  -  suitable for prototype
   but not for persistence
 - No PII should appear in console logs in production
 - The `/debug` route must be removed or gated behind authentication before
@@ -101,7 +101,7 @@ dispatch to the appropriate adapter. Default to `mock` if not set.
 - Each consent has a timestamp recorded at submission time
 - Future consent versions should be additive only (never remove fields)
 - The consent audit log should be stored in an append-only collection
-- Consent withdrawal should not delete the original consent record — it should
+- Consent withdrawal should not delete the original consent record  -  it should
   append a withdrawal event with timestamp
 
 ---
@@ -111,7 +111,7 @@ dispatch to the appropriate adapter. Default to `mock` if not set.
 If the production Firestore or CRM integration fails:
 
 1. Disable the integration feature flag (`VITE_ASGX_SUBMISSION_MODE=mock`)
-2. Deployment reverts to the mock adapter — submissions are stored locally
+2. Deployment reverts to the mock adapter  -  submissions are stored locally
 3. Investigate the failure root cause in the staging environment
 4. Fix and re-deploy with the feature flag set back to the production adapter
 5. Any submissions captured during rollback can be exported from the mock

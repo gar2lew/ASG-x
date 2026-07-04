@@ -14,9 +14,9 @@ const STATES = [
 ] as const;
 
 const BEST_TIMES = [
-  'Morning (9am–12pm)',
-  'Afternoon (12pm–5pm)',
-  'Evening (5pm–8pm)',
+  'Morning (9am-12pm)',
+  'Afternoon (12pm-5pm)',
+  'Evening (5pm-8pm)',
 ] as const;
 
 interface Step1BasicDetailsProps {

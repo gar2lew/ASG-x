@@ -1,7 +1,7 @@
 # ASG-x Content Guide
 
 ## Brand Positioning for ASG-x
-ASG-x is an online-only SMSF property enquiry funnel designed to help individuals explore whether using their superannuation to invest in property may be worth discussing with licensed professionals. We provide general information, education, and discovery services only—no personal financial advice. Our role is to educate, facilitate discovery, and refer to licensed advisers, SMSF specialists, and finance brokers where appropriate.
+ASG-x is an online-only SMSF property enquiry funnel designed to help individuals explore whether using their superannuation to invest in property may be worth discussing with licensed professionals. We provide general information, education, and discovery services only - no personal financial advice. Our role is to educate, facilitate discovery, and refer to licensed advisers, SMSF specialists, and finance brokers where appropriate.
 
 **NEEDS REVIEW**: Final brand positioning statement and tone of voice guidelines require compliance/legal review.
 

@@ -28,7 +28,7 @@ const faqItems = [
   {
     question: 'Do I need to pay for the discovery call?',
     answer:
-      'No. The initial discovery call is provided at no obligation and no cost to you. During the call, we provide general information and answer your questions about the process. If appropriate, we may refer you to a licensed professional — that referral is also at no cost to you.',
+      'No. The initial discovery call is provided at no obligation and no cost to you. During the call, we provide general information and answer your questions about the process. If appropriate, we may refer you to a licensed professional  -  that referral is also at no cost to you.',
   },
   {
     question: 'Is my information safe?',
@@ -125,12 +125,12 @@ const statsAbout = [
     label: 'Office locations supporting clients across Perth and Brisbane',
   },
   {
-    value: 'Multi‑disciplinary',
+    value: 'Multi-disciplinary',
     label: 'Property, finance, tax, accounting and SMSF partner network',
   },
   {
-    value: 'Online‑first',
-    label: 'Zoom‑based discovery and guided enquiry process',
+    value: 'Online-first',
+    label: 'Zoom-based discovery and guided enquiry process',
   },
 ]
 
@@ -231,31 +231,37 @@ export default function LandingPage() {
   return (
     <div className="bg-obsidian text-white">
       {/* ===== Hero ===== */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4">
-        {/* Placeholder gradient — replace with branded video loop when asset is available:
+      <section className="hero-stage relative min-h-[92vh] flex items-center justify-center overflow-hidden px-4 py-14 sm:py-20">
+        {/* Placeholder gradient, replace with branded video loop when asset is available:
             Use a property/finance/advisory editorial loop (no generic lifestyle footage).
-            Dimensions: 1920×1080, dark grade, brass-tinted overlay.
+            Dimensions: 1920x1080, dark grade, brass-tinted overlay.
         */}
-        <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-onyx to-obsidian" />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(1200px 600px at 50% 0%, rgba(181, 166, 66, 0.15), transparent), radial-gradient(800px 400px at 80% 100%, rgba(181, 166, 66, 0.06), transparent)',
-          }}
+        <div className="absolute inset-0 bg-[linear-gradient(150deg,#04070d_0%,#0d1726_42%,#050506_100%)]" />
+        <div className="hero-texture absolute inset-0" />
+        <div className="hero-brass-glow absolute left-1/2 top-[44%] h-[64rem] w-[64rem] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+        <div className="hero-navy-glow absolute right-[-18rem] top-10 h-[40rem] w-[40rem] rounded-full" />
+        <div className="hero-bottom-light absolute bottom-[-20rem] left-1/2 h-[32rem] w-[72rem] -translate-x-1/2 rounded-full" />
+        <img
+          src="/brand/ax-mark.svg"
+          alt=""
+          aria-hidden="true"
+          className="hero-watermark pointer-events-none absolute left-1/2 top-[44%] z-[1] h-[34rem] w-auto -translate-x-1/2 -translate-y-1/2 opacity-10"
         />
 
-        <div className="glass-panel relative z-10 max-w-[800px] w-full mx-auto p-6 sm:p-8 md:p-12 text-center">
-          <span className="block uppercase tracking-[0.25em] text-[0.65rem] sm:text-xs font-semibold text-brass-gold mb-3">
+        <div className="glass-panel hero-panel relative z-10 max-w-[1020px] w-full mx-auto p-5 sm:p-8 md:p-11 lg:p-12 text-center">
+          <span className="block uppercase tracking-[0.3em] text-[0.68rem] sm:text-xs font-bold text-brass-gold mb-3">
             Amplify X-Change &nbsp;| &nbsp;Property Pathway
           </span>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.12] mb-5 text-white">
+          <span className="mb-4 block text-[0.7rem] uppercase tracking-[0.24em] text-white/60">
+            by Amplify Solutions Group
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.18rem] font-light leading-[1.04] mb-5 text-white">
             Explore whether a property pathway may be worth discussing
           </h1>
-          <p className="text-base sm:text-lg md:text-xl font-light text-white/70 mb-8 max-w-[600px] mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl font-light text-white/80 mb-8 max-w-[740px] mx-auto leading-relaxed">
             Due to our success supporting in-person clients, Amplify X-Change
             is opening up its property pathway education and discovery process
-            to Australians nationwide — combining local experience with a
+            to Australians nationwide, combining local experience with a
             guided, digital-first experience. The current pathway includes
             general information about SMSF property considerations and connects
             users with the right professional support where required.
@@ -263,14 +269,14 @@ export default function LandingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Link
               to="/quiz"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[3px] hover:shadow-[0_10px_25px_rgba(181,166,66,0.3)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="hero-primary-cta inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.16em] font-bold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[3px] hover:shadow-[0_18px_36px_rgba(181,166,66,0.42)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-9 sm:py-5"
             >
               Start online enquiry
             </Link>
             <Link
               to="/book-discovery"
               aria-label="Book a no-obligation discovery call"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-transparent text-white border border-brass-gold rounded-lg transition-all duration-300 hover:bg-brass-gold hover:bg-opacity-10 hover:-translate-y-[3px]"
+              className="hero-secondary-cta inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.16em] font-bold bg-white/6 text-white border border-brass-gold/80 rounded-lg transition-all duration-300 hover:bg-brass-gold/15 hover:border-brass-gold-light hover:-translate-y-[3px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass-gold sm:px-9 sm:py-5"
             >
               Book a discovery call
             </Link>
@@ -319,8 +325,8 @@ export default function LandingPage() {
       </section>
 
       {/* ===== SMSF Property Education ===== */}
-      <section className="bg-obsidian px-4 py-20 md:py-28">
-        <div className="max-w-[1160px] mx-auto">
+      <section className="section-premium bg-obsidian px-4 py-20 md:py-28">
+        <div className="relative z-10 max-w-[1160px] mx-auto">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
               <span className="block uppercase tracking-[0.25em] text-xs font-semibold text-brass-gold mb-3">
@@ -338,13 +344,13 @@ export default function LandingPage() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/quiz"
-                  className="inline-flex items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.15em] font-semibold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  className="hero-primary-cta inline-flex items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.15em] font-bold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Start online enquiry
                 </Link>
                 <Link
                   to="/quiz"
-                  className="inline-flex items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.15em] font-semibold border border-brass-gold text-white rounded-lg transition-all duration-300 hover:bg-brass-gold/10 hover:-translate-y-[2px]"
+                  className="hero-secondary-cta inline-flex items-center justify-center px-7 py-3 text-sm uppercase tracking-[0.15em] font-bold border border-brass-gold/80 text-white rounded-lg transition-all duration-300 hover:bg-brass-gold/10 hover:-translate-y-[2px]"
                 >
                   Explore the pathway
                 </Link>
@@ -353,7 +359,7 @@ export default function LandingPage() {
 
             <div className="grid gap-5">
               {pathwayCards.map((pathway) => (
-                <article key={pathway.label} className="premium-card brass-corners">
+                <article key={pathway.label} className="premium-card section-card brass-corners">
                   <span className="block uppercase tracking-[0.22em] text-[0.68rem] font-semibold text-brass-gold mb-3">
                     {pathway.label}
                   </span>
@@ -376,8 +382,8 @@ export default function LandingPage() {
       </section>
 
       {/* ===== Residential vs Commercial Comparison ===== */}
-      <section className="bg-onyx border-t border-white/5 px-4 py-20 md:py-28">
-        <div className="max-w-[1180px] mx-auto">
+      <section className="section-premium section-premium-onyx border-t border-white/5 px-4 py-20 md:py-28">
+        <div className="relative z-10 max-w-[1180px] mx-auto">
           <div className="text-center mb-14">
             <span className="block uppercase tracking-[0.25em] text-xs font-semibold text-brass-gold mb-3">
               Residential vs commercial comparison
@@ -392,8 +398,8 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-brass-gold/20 bg-card-surface">
-            <div className="hidden md:grid grid-cols-[0.85fr_1fr_1fr] border-b border-white/10 bg-white/[0.03]">
+          <div className="comparison-panel overflow-hidden rounded-2xl border border-brass-gold/20 bg-card-surface">
+            <div className="hidden md:grid grid-cols-[0.85fr_1fr_1fr] border-b border-brass-gold/15 bg-brass-gold/[0.06]">
               <div className="px-5 py-4 text-xs uppercase tracking-[0.2em] text-brass-gold font-semibold">
                 Compare
               </div>
@@ -408,20 +414,20 @@ export default function LandingPage() {
               {comparisonRows.map((row) => (
                 <div
                   key={row.topic}
-                  className="grid gap-4 p-5 md:grid-cols-[0.85fr_1fr_1fr] md:gap-0 md:p-0"
+                  className="comparison-row grid gap-4 p-5 md:grid-cols-[0.85fr_1fr_1fr] md:gap-0 md:p-0"
                 >
                   <div className="md:px-5 md:py-5">
                     <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
                       {row.topic}
                     </h3>
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-obsidian/50 p-4 text-sm leading-6 text-white/70 md:rounded-none md:border-0 md:border-l md:border-white/10 md:bg-transparent md:px-5 md:py-5">
+                  <div className="rounded-lg border border-white/10 bg-obsidian/60 p-4 text-sm leading-6 text-white/75 md:rounded-none md:border-0 md:border-l md:border-white/10 md:bg-transparent md:px-5 md:py-5">
                     <span className="mb-1 block text-[0.65rem] uppercase tracking-[0.18em] text-brass-gold md:hidden">
                       Residential
                     </span>
                     {row.residential}
                   </div>
-                  <div className="rounded-lg border border-white/10 bg-obsidian/50 p-4 text-sm leading-6 text-white/70 md:rounded-none md:border-0 md:border-l md:border-white/10 md:bg-transparent md:px-5 md:py-5">
+                  <div className="rounded-lg border border-white/10 bg-obsidian/60 p-4 text-sm leading-6 text-white/75 md:rounded-none md:border-0 md:border-l md:border-white/10 md:bg-transparent md:px-5 md:py-5">
                     <span className="mb-1 block text-[0.65rem] uppercase tracking-[0.18em] text-brass-gold md:hidden">
                       Commercial
                     </span>
@@ -437,8 +443,8 @@ export default function LandingPage() {
       <SmsfScenarioCalculator />
 
       {/* ===== Illustrative Scenarios + Professional Support ===== */}
-      <section className="bg-obsidian px-4 py-20 md:py-28">
-        <div className="max-w-[1180px] mx-auto">
+      <section className="section-premium bg-obsidian px-4 py-20 md:py-28">
+        <div className="relative z-10 max-w-[1180px] mx-auto">
           <div className="text-center mb-14">
             <span className="block uppercase tracking-[0.25em] text-xs font-semibold text-brass-gold mb-3">
               Illustrative scenarios
@@ -454,7 +460,7 @@ export default function LandingPage() {
 
           <div className="grid gap-6 lg:grid-cols-3">
             {scenarioCards.map((scenario) => (
-              <article key={scenario.title} className="premium-card">
+              <article key={scenario.title} className="premium-card section-card scenario-card">
                 <span className="block uppercase tracking-[0.2em] text-[0.65rem] font-semibold text-brass-gold mb-4">
                   {scenario.label}
                 </span>
@@ -464,17 +470,20 @@ export default function LandingPage() {
                 <p className="text-sm leading-6 text-white/70">
                   {scenario.description}
                 </p>
-                <p className="mt-5 rounded-lg border border-brass-gold/20 bg-obsidian/60 p-4 text-xs leading-5 text-white/55">
+                <p className="mt-5 rounded-lg border border-brass-gold/25 bg-obsidian/70 p-4 text-xs leading-5 text-white/65">
                   <span className="font-semibold text-brass-gold">
                     Example assumptions:
                   </span>{' '}
                   {scenario.assumption}
                 </p>
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
+                  Not personal financial advice
+                </p>
               </article>
             ))}
           </div>
 
-          <div className="mt-12 grid gap-8 rounded-2xl border border-brass-gold/20 bg-card-surface p-6 md:grid-cols-[0.85fr_1.15fr] md:p-8">
+          <div className="support-panel mt-12 grid gap-8 rounded-2xl border border-brass-gold/20 bg-card-surface p-6 md:grid-cols-[0.85fr_1.15fr] md:p-8">
             <div>
               <span className="block uppercase tracking-[0.25em] text-xs font-semibold text-brass-gold mb-3">
                 Professional support required
@@ -493,7 +502,7 @@ export default function LandingPage() {
               {professionalSupport.map((role) => (
                 <div
                   key={role}
-                  className="flex items-center gap-3 rounded-lg border border-white/10 bg-obsidian/50 px-4 py-3"
+                  className="support-role flex items-center gap-3 rounded-lg border border-white/10 bg-obsidian/60 px-4 py-3"
                 >
                   <CheckCircle className="h-4 w-4 text-brass-gold shrink-0" />
                   <span className="text-sm text-white/75">{role}</span>
@@ -585,7 +594,7 @@ export default function LandingPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {serviceCategories.map((svc) => (
-              <div key={svc.label} className="service-image-card" role="img" aria-label={`${svc.label}: ${svc.title}. Image placeholder — replace with professional ${svc.label.toLowerCase()} photography.`}>
+              <div key={svc.label} className="service-image-card" role="img" aria-label={`${svc.label}: ${svc.title}. Image placeholder  -  replace with professional ${svc.label.toLowerCase()} photography.`}>
                 {/* Placeholder: replace with branded professional image.
                     Prefer architecture/finance/advisory editorial photography
                     with dark grading and brass-tinted overlays.
@@ -702,9 +711,9 @@ export default function LandingPage() {
               'SMSF setup and ongoing costs (accounting, audit, tax, legal fees)',
               'Property costs including stamp duty, maintenance, and management',
               'Borrowing costs and limited recourse borrowing arrangement requirements',
-              'Investment risk — property values can decrease',
-              'Liquidity risk — property may be difficult to sell quickly',
-              'Diversification risk — concentrating super in one asset class',
+              'Investment risk  -  property values can decrease',
+              'Liquidity risk  -  property may be difficult to sell quickly',
+              'Diversification risk  -  concentrating super in one asset class',
               'Compliance requirements and ongoing SMSF obligations',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
@@ -717,8 +726,8 @@ export default function LandingPage() {
       </section>
 
       {/* ===== Final CTA ===== */}
-      <section className="bg-obsidian px-4 py-20 md:py-28">
-        <div className="cta-frame">
+      <section className="section-premium bg-obsidian px-4 py-20 md:py-28">
+        <div className="cta-frame premium-cta-frame">
           <span className="block uppercase tracking-[0.25em] text-xs font-semibold text-brass-gold mb-4">
             Next step
           </span>
@@ -726,20 +735,20 @@ export default function LandingPage() {
             Ready to explore whether this pathway may be worth discussing?
           </h2>
           <p className="text-white/50 text-lg mb-8 max-w-[700px] mx-auto">
-            Start with a short online enquiry and book a no‑obligation discovery
+            Start with a short online enquiry and book a no-obligation discovery
             call with Amplify X-Change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/quiz"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[3px] hover:shadow-[0_10px_25px_rgba(181,166,66,0.3)]"
+              className="hero-primary-cta inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.16em] font-bold bg-brass-gold text-obsidian rounded-lg transition-all duration-300 hover:bg-brass-gold-light hover:-translate-y-[3px] hover:shadow-[0_18px_36px_rgba(181,166,66,0.42)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-9 sm:py-5"
             >
               Start online enquiry
             </Link>
             <Link
               to="/book-discovery"
               aria-label="Book a no-obligation discovery call"
-              className="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.15em] font-semibold bg-transparent text-white border border-brass-gold rounded-lg transition-all duration-300 hover:bg-brass-gold hover:bg-opacity-10 hover:-translate-y-[3px]"
+              className="hero-secondary-cta inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-[0.16em] font-bold bg-white/6 text-white border border-brass-gold/80 rounded-lg transition-all duration-300 hover:bg-brass-gold/15 hover:border-brass-gold-light hover:-translate-y-[3px] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brass-gold sm:px-9 sm:py-5"
             >
               Book a discovery call
             </Link>

@@ -1,11 +1,11 @@
 # Amplify X-Change | Property Pathway
 
-**Status:** Vercel preview/demo prototype — pre-production and demo-safe
+**Status:** Vercel preview/demo prototype  -  pre-production and demo-safe
 
 ## What this is
 
 Amplify X-Change by Amplify Solutions Group is opening up its property pathway
-education and discovery process to Australians nationwide — combining local
+education and discovery process to Australians nationwide  -  combining local
 experience with a guided, digital-first experience. The current demo includes
 general information about SMSF property considerations and connects users with
 the right professional support where required.
@@ -176,17 +176,17 @@ Then open `http://localhost:5173` in your browser.
   (`src/lib/submissionAdapter.ts`). It builds a future-ready payload and stores
   it in `sessionStorage`. No CRM or production Firebase writes occur.
 
-## Phase 3A — Local submission data model
+## Phase 3A  -  Local submission data model
 
 A typed data model and local mock submission adapter have been implemented:
 
 ### Data model (`src/types/asgx.ts`)
-- `AsgXQuizSubmission` — Raw quiz data as produced by the form
-- `AsgXQuizOutcome` — `'explore'` | `'review'` | `'not_now'`
-- `AsgXConsent` — Structured consent record with version + timestamp
-- `AsgXUtmData` — UTM campaign tracking fields
-- `AsgXLeadPayload` — Future-ready payload for CRM/Firebase
-- `AsgXSubmissionStatus` — Result of a submission attempt
+- `AsgXQuizSubmission`  -  Raw quiz data as produced by the form
+- `AsgXQuizOutcome`  -  `'explore'` | `'review'` | `'not_now'`
+- `AsgXConsent`  -  Structured consent record with version + timestamp
+- `AsgXUtmData`  -  UTM campaign tracking fields
+- `AsgXLeadPayload`  -  Future-ready payload for CRM/Firebase
+- `AsgXSubmissionStatus`  -  Result of a submission attempt
 
 ### UTM helper (`src/lib/utm.ts`)
 - Reads `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, `utm_term`
@@ -213,7 +213,7 @@ A typed data model and local mock submission adapter have been implemented:
 | `asgXFirestoreResult` | Firestore emulator write result (firebase mode only) |
 | `asgXBookingIntent` | Demo-only preferred discovery call details |
 
-## Phase 3B — Integration readiness and debug visibility
+## Phase 3B  -  Integration readiness and debug visibility
 
 ### Payload validation (`src/lib/leadPayloadValidation.ts`)
 Validates every `AsgXLeadPayload` before it would be submitted:
@@ -244,8 +244,8 @@ Returns `{ valid, errors[], warnings[] }`. No external dependencies.
 - Not linked from public-facing pages
 
 ### Documentation
-- `docs/asg-x-crm-field-map.md` — Complete field mapping from local payload to CRM and Firestore, consent log schema, follow-up tasks, privacy notes, open questions
-- `docs/asg-x-integration-plan.md` — 6-stage adapter evolution plan (mock → firebase → CRM → automation → booking), feature flag approach, security considerations, rollback plan
+- `docs/asg-x-crm-field-map.md`  -  Complete field mapping from local payload to CRM and Firestore, consent log schema, follow-up tasks, privacy notes, open questions
+- `docs/asg-x-integration-plan.md`  -  6-stage adapter evolution plan (mock → firebase → CRM → automation → booking), feature flag approach, security considerations, rollback plan
 
 ## What should NOT be connected yet
 
@@ -259,18 +259,18 @@ Returns `{ valid, errors[], warnings[] }`. No external dependencies.
 
 ## Next recommended phase
 
-1. **Phase 3C — Firebase integration**: Wire Firestore for quiz submission
+1. **Phase 3C  -  Firebase integration**: Wire Firestore for quiz submission
    persistence using the existing stubs in `src/lib/firebase.ts` and
    `src/lib/leadSubmission.ts`. The `AsgXLeadPayload` data model is ready to
    map directly into Firestore documents.
-2. **Phase 3D — Booking integration**: Wire "Book a discovery call" buttons to
+2. **Phase 3D  -  Booking integration**: Wire "Book a discovery call" buttons to
    a calendar/booking provider (e.g. Calendly, HubSpot, or custom).
-3. **Phase 3E — Admin dashboard**: Build an internal view for submitted
+3. **Phase 3E  -  Admin dashboard**: Build an internal view for submitted
    enquiries.
-4. **Phase 3F — Production hardening**: Add rate limiting, CSP headers,
+4. **Phase 3F  -  Production hardening**: Add rate limiting, CSP headers,
    CSRF protection, and proper environment-variable management before deploying.
 
-## Phase 4A — Firebase emulator scaffold
+## Phase 4A  -  Firebase emulator scaffold
 
 ### Submission modes
 Two submission modes via `VITE_ASGX_SUBMISSION_MODE`:
@@ -286,11 +286,11 @@ configured with `.env` variables and `VITE_USE_FIREBASE_EMULATOR=true`.
 ### Env variables
 See `.env.example` for the full template. Key variables:
 
-- `VITE_ASGX_SUBMISSION_MODE` — `"mock"` (default) or `"firebase"`
-- `VITE_ASGX_ENABLE_DEBUG` — set to `"true"` only for local QA/debug sessions
-- `VITE_ASGX_DEMO_MODE` — set to `"true"` for the subtle demo preview banner
-- `VITE_FIREBASE_API_KEY` through `VITE_FIREBASE_APP_ID` — Firebase config
-- `VITE_USE_FIREBASE_EMULATOR` — set to `"true"` only for local emulator connection
+- `VITE_ASGX_SUBMISSION_MODE`  -  `"mock"` (default) or `"firebase"`
+- `VITE_ASGX_ENABLE_DEBUG`  -  set to `"true"` only for local QA/debug sessions
+- `VITE_ASGX_DEMO_MODE`  -  set to `"true"` for the subtle demo preview banner
+- `VITE_FIREBASE_API_KEY` through `VITE_FIREBASE_APP_ID`  -  Firebase config
+- `VITE_USE_FIREBASE_EMULATOR`  -  set to `"true"` only for local emulator connection
 
 No real `.env` file exists. No secrets are hardcoded.
 
@@ -312,7 +312,7 @@ No real `.env` file exists. No secrets are hardcoded.
 - The existing mock adapter (`submissionAdapter.ts`) is unchanged in mock mode
 - All existing debug tools, session storage keys, and sample payloads are preserved
 
-## Phase 4B — Emulator wiring and smoke test preparation
+## Phase 4B  -  Emulator wiring and smoke test preparation
 
 ### Firebase emulator project files
 
@@ -323,7 +323,7 @@ No real `.env` file exists. No secrets are hardcoded.
 | `firestore.indexes.json` | Empty indexes file |
 
 These files support local emulator testing. They contain no deploy targets.
-The emulator rules are intentionally permissive — they are NOT production-safe.
+The emulator rules are intentionally permissive  -  they are NOT production-safe.
 
 ### Local env override
 
@@ -349,8 +349,8 @@ All submissions stay in `sessionStorage`. No Firebase involved.
 
 ```powershell
 copy .env.local.example .env.local
-npm run emulators      # Terminal 1 — start Firestore emulator
-npm run dev            # Terminal 2 — start Vite
+npm run emulators      # Terminal 1  -  start Firestore emulator
+npm run dev            # Terminal 2  -  start Vite
 ```
 
 Then complete a quiz. The submission will write to the local Firestore emulator.
@@ -377,13 +377,13 @@ All Phase 4A blockers remain in place. Additionally:
 
 - `firestore.rules` must be replaced with production security rules
 - `emulatorOnly: true` marker must be audited before production
-- `.env.local.example` uses demo values — never use with production Firebase
+- `.env.local.example` uses demo values  -  never use with production Firebase
 - `npm run emulators` script must not exist in production deployments
 
-## Phase 4C — Emulator smoke test and hardening
+## Phase 4C  -  Emulator smoke test and hardening
 
 ### Changes
-- **`.env.local`** created from `.env.local.example` — ignored by `.gitignore`
+- **`.env.local`** created from `.env.local.example`  -  ignored by `.gitignore`
 - **Debug page** now shows `asgXFirestoreResult` with copy/download buttons
 - **Clear-all** now wipes `asgXFirestoreResult` alongside other keys
 
@@ -409,10 +409,10 @@ Visit `/debug` after quiz submission. The 3rd section displays the Firestore wri
 ### Known limitations
 - Emulator must be started manually in a separate terminal
 - `/debug` route must be removed before production deployment
-- Firestore doc ID visible in debug — do not expose in production
+- Firestore doc ID visible in debug  -  do not expose in production
 - UTM test URL: `/quiz?utm_source=test&utm_medium=cpc&utm_campaign=asg_x_smsf_test&utm_content=hero&utm_term=smsf_property`
 
-## Phase 5A — Production readiness review
+## Phase 5A  -  Production readiness review
 
 ### Documentation created
 
@@ -424,14 +424,14 @@ Visit `/debug` after quiz submission. The 3rd section displays the Firestore wri
 
 ### Recommended production architecture
 
-**Option B — Firebase Functions server-side endpoint (recommended)**
+**Option B  -  Firebase Functions server-side endpoint (recommended)**
 
 - Frontend calls a `submitLead` HTTPS callable Function
 - Function validates payload server-side (unspoofable)
 - Function writes to Firestore with server timestamps
 - Function logs an immutable consent audit entry
 - Function can later trigger CRM/email/SMS workflows
-- Security rules deny all direct client writes — only the Function writes
+- Security rules deny all direct client writes  -  only the Function writes
 
 **Options A (direct client write) and C (external API) are documented and deferred.**
 
@@ -447,7 +447,7 @@ Visit `/debug` after quiz submission. The 3rd section displays the Firestore wri
 
 Phase 5B: Firebase Functions local emulator scaffold (documented in `docs/asg-x-phase-5b-functions-plan.md`), if approved.
 
-## Phase 5A-Demo — Vercel preview funnel
+## Phase 5A-Demo  -  Vercel preview funnel
 
 ### Preview status
 
@@ -466,14 +466,14 @@ VITE_USE_FIREBASE_EMULATOR=false
 
 ### Demo flow
 
-1. `/` — Landing page with "Start online enquiry" and "Book a discovery call"
+1. `/`  -  Landing page with "Start online enquiry" and "Book a discovery call"
    CTAs.
-2. `/quiz` — Four-step enquiry quiz with local mock submission.
-3. `/thank-you` — Soft outcome, local reference ID when available, public-safe
+2. `/quiz`  -  Four-step enquiry quiz with local mock submission.
+3. `/thank-you`  -  Soft outcome, local reference ID when available, public-safe
    next-step copy, and a booking CTA.
-4. `/book-discovery` — Demo-only booking intent form saved under
+4. `/book-discovery`  -  Demo-only booking intent form saved under
    `asgXBookingIntent`.
-5. `/debug` — Disabled unless `VITE_ASGX_ENABLE_DEBUG=true`.
+5. `/debug`  -  Disabled unless `VITE_ASGX_ENABLE_DEBUG=true`.
 
 ### What works in demo
 
@@ -521,27 +521,27 @@ integration work.
 | `asgXUtmData` | UTM parameters from URL or previously stored |
 | `asgXBookingIntent` | Demo-only preferred discovery call details |
 
-## Phase 3C — Prototype hardening, fixtures, and QA
+## Phase 3C  -  Prototype hardening, fixtures, and QA
 
 ### Debug export/copy tools (`/debug`)
-- **Copy JSON** button on each section — copies formatted JSON to clipboard
-- **Download JSON** button on each section — downloads `.json` file
+- **Copy JSON** button on each section  -  copies formatted JSON to clipboard
+- **Download JSON** button on each section  -  downloads `.json` file
 - "Copied" feedback indicator (green checkmark, auto-dismisses after 2s)
 - Refresh and Clear buttons retained from Phase 3B
 
 ### Sample payload fixtures
 Three realistic example payloads in `docs/sample-payloads/`:
-- `explore-payload.example.json` — SMSF owner, $500k+ combined, commercial property, score 88
-- `review-payload.example.json` — unsure about SMSF, $200-300k, residential, score 52
-- `not-now-payload.example.json` — no SMSF, under $100k, part-time, research only, score 22
+- `explore-payload.example.json`  -  SMSF owner, $500k+ combined, commercial property, score 88
+- `review-payload.example.json`  -  unsure about SMSF, $200-300k, residential, score 52
+- `not-now-payload.example.json`  -  no SMSF, under $100k, part-time, research only, score 22
 
 All use fake data. No real client information.
 
 ### E2E manual QA checklist
-`docs/asg-x-e2e-manual-test.md` — 13 test sections covering:
+`docs/asg-x-e2e-manual-test.md`  -  13 test sections covering:
 - Landing page rendering
 - CTA link routing
-- Quiz steps 1–4 validation
+- Quiz steps 1-4 validation
 - Submit and thank-you page
 - SessionStorage key creation
 - Debug page (copy, download, refresh, clear)
@@ -563,7 +563,7 @@ No npm script added (avoids dependencies).
 
 - `npm run build` produces production output in `dist/`
 - All interactive elements have visible focus states (brass-gold outline)
-- Copy has been swept for compliance — no risk-prohibited wording
+- Copy has been swept for compliance  -  no risk-prohibited wording
 - Google Fonts are loaded via `@import` in `src/index.css`
 - The Tailwind theme is extended with Open Design color tokens in `src/index.css`
 

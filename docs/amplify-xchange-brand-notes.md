@@ -10,7 +10,7 @@
 ## Mini Mission Statement
 
 Due to our success supporting in-person clients, Amplify X-Change is opening up
-its property pathway education and discovery process to Australians nationwide —
+its property pathway education and discovery process to Australians nationwide  - 
 combining local experience with a guided, digital-first experience.
 
 The current pathway includes general information about SMSF property
